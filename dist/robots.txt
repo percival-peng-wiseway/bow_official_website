@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://percival-peng-wiseway.github.io/bow_official_website/sitemap.xml
