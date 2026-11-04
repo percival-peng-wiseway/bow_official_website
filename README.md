@@ -68,11 +68,11 @@ The existing GitHub Actions workflow publishes pushes to `main`. The release wor
 
 ## Visual baseline
 
-The linked public GitHub Pages homepage HTML and stylesheet were downloaded and compared byte-for-byte with commit d6bc092 on 4 November 2026; both matched. Evidence is recorded in `docs/baseline-verification.json`. The shared CSS starts with that original stylesheet. Keep the original horizontal brand, left Menu pill, native menu dialog, page-heading/people-directory/person-card structure and existing detail layouts. Add content and requirement-specific styles after this baseline; do not replace it with a new visual theme. The simplified six-item navigation stays inside Menu; search remains removed and the header CTA is Contact, as requested in BOW feedback. Page Notes injection was removed from the website preview at the user’s request. Previously saved browser notes are not modified.
+The linked public GitHub Pages homepage HTML and stylesheet were downloaded and compared byte-for-byte with commit d6bc092 on 4 November 2026; both matched. Evidence is recorded in `docs/baseline-verification.json`. The shared CSS starts with that original stylesheet. Keep the original horizontal brand, left Menu pill, native menu dialog, page-heading/people-directory/person-card structure and existing detail layouts. Add content and requirement-specific styles after this baseline; do not replace it with a new visual theme. Following the later user request, desktop navigation is inline beside the Home logo, with About/Services/Projects/People dropdowns and the existing Contact CTA. Mobile retains Menu with expandable quick links. Search remains removed. Page Notes injection was removed from the website preview at the user’s request. Previously saved browser notes are not modified.
 
 ## Latest requested UI
 
-The contact-page email is enlarged and LinkedIn uses an accessible icon button. The homepage state selector uses a borderless frosted capsule and sliding gold highlight with reduced-motion support. All are included in this original-baseline revision. The local 49-row requirement register includes these requests and the Page Notes removal.
+The contact-page email is enlarged and LinkedIn uses an accessible icon button. The homepage state selector uses a borderless frosted capsule and sliding gold highlight with reduced-motion support. All are included in this original-baseline revision. The local requirement register includes these requests and the Page Notes removal.
 
 ## Homepage rotation
 
@@ -81,3 +81,7 @@ The homepage advances every two seconds through states with supplied posters or 
 ## Shared module templates
 
 Use `sectionTitle`, `moduleSection` and `infoCard` in `build.mjs` for ordinary content sections. Home collections, About sections, people headings and related-project sections share these templates. Spacing and typography use the final `--module-*` tokens in `dist/styles.css`. Text cards share header/body rows so wrapping titles keep their descriptions aligned. Keep the approved hero, contact callout, full-image project banners and footer as their dedicated components.
+
+## Header navigation
+
+`headerSections` in `build.mjs` supplies the same quick links to desktop dropdowns and mobile accordions. The logo links Home. At widths above 1100 CSS pixels, top-level labels remain direct page links and hover or the adjacent disclosure button opens quick links. Below that width the native Menu dialog provides the same destinations. Arrow Down opens desktop links; Escape closes and restores focus. The homepage rotation pauses while either navigation surface is open. About and People destinations use stable section anchors.

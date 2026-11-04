@@ -14,6 +14,57 @@ menuDialog.addEventListener('cancel',event=>{event.preventDefault();setMenu(fals
 menuDialog.addEventListener('close',()=>{menuButton.setAttribute('aria-expanded','false');menuDialog.classList.remove('is-visible');document.documentElement.classList.remove('dialog-open');});
 menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>setMenu(false)));
 
+// Desktop disclosure navigation keeps the main titles as normal links.
+const desktopNav=document.getElementById('desktop-navigation');
+const desktopItems=[...desktopNav.querySelectorAll('[data-desktop-nav]')];
+let desktopCloseTimer;
+function setDesktopNavigation(item=null){
+ clearTimeout(desktopCloseTimer);
+ let changed=false;
+ desktopItems.forEach(group=>{
+  const toggle=group.querySelector('.desktop-nav-toggle'),open=group===item;
+  if(toggle.getAttribute('aria-expanded')!==String(open))changed=true;
+  toggle.setAttribute('aria-expanded',String(open));
+  document.getElementById(toggle.getAttribute('aria-controls')).hidden=!open;
+ });
+ if(changed)document.dispatchEvent(new Event('header-navigation-change'));
+}
+desktopItems.forEach(item=>{
+ const toggle=item.querySelector('.desktop-nav-toggle');
+ item.addEventListener('pointerenter',event=>{if(event.pointerType!=='touch')setDesktopNavigation(item);});
+ item.addEventListener('pointerleave',()=>{
+  desktopCloseTimer=setTimeout(()=>{if(!item.contains(document.activeElement))setDesktopNavigation();},150);
+ });
+ item.addEventListener('focusout',event=>{if(!item.contains(event.relatedTarget))setDesktopNavigation();});
+ toggle.addEventListener('click',()=>setDesktopNavigation(toggle.getAttribute('aria-expanded')==='true'?null:item));
+ item.querySelector('.desktop-nav-row').addEventListener('keydown',event=>{
+  if(event.key==='ArrowDown'){
+   event.preventDefault();setDesktopNavigation(item);item.querySelector('.desktop-submenu a').focus();
+  }
+ });
+});
+desktopNav.addEventListener('keydown',event=>{
+ if(event.key==='Escape'){
+  const open=desktopNav.querySelector('[aria-expanded="true"]');
+  if(open){event.preventDefault();setDesktopNavigation();open.focus();}
+ }
+});
+desktopNav.querySelectorAll('a').forEach(anchor=>anchor.addEventListener('click',()=>setDesktopNavigation()));
+document.addEventListener('pointerdown',event=>{if(!desktopNav.contains(event.target))setDesktopNavigation();});
+document.querySelectorAll('[data-mobile-nav-toggle]').forEach(toggle=>{
+ toggle.addEventListener('click',()=>{
+  const open=toggle.getAttribute('aria-expanded')!=='true';
+  document.querySelectorAll('[data-mobile-nav-toggle]').forEach(button=>{
+   const expanded=button===toggle&&open;button.setAttribute('aria-expanded',String(expanded));
+   document.getElementById(button.getAttribute('aria-controls')).hidden=!expanded;
+  });
+ });
+});
+matchMedia('(min-width:1101px)').addEventListener('change',event=>{
+ setDesktopNavigation();if(event.matches&&menuDialog.open)setMenu(false);
+});
+const headerNavigationOpen=()=>menuDialog.open||!!desktopNav.querySelector('[aria-expanded="true"]');
+
 // Only the selected state's clip is loaded. Missing footage never reuses a different state's photograph.
 const video=document.getElementById('hero-video'),poster=document.getElementById('hero-poster');
 if(video){
@@ -23,7 +74,7 @@ if(video){
  const rotation=createHeroRotation({scenes:config.heroScenes,initialId:selected.id,onAdvance:id=>setScene(id)});
  const icons={pause:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14M16 5v14" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>',play:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 5 11 7-11 7Z" fill="currentColor"/></svg>'};
  function syncPlayback(){
-  const active=!userPaused&&!document.hidden&&!reduced.matches&&heroVisible&&!menuDialog.open;
+  const active=!userPaused&&!document.hidden&&!reduced.matches&&heroVisible&&!headerNavigationOpen();
   rotation.setRunning(active);
   place.setAttribute('aria-live',active&&rotation.canRotate?'off':'polite');
   playback.hidden=reduced.matches||(!rotation.canRotate&&!selected.video&&!selected.mobileVideo);
@@ -43,9 +94,9 @@ if(video){
   else{poster.removeAttribute('src');poster.alt='';}
   const source=matchMedia('(max-width:760px)').matches&&scene.mobileVideo?scene.mobileVideo:scene.video;
   syncPlayback();
-  if(!source||!canAnimate()||userPaused||document.hidden||!heroVisible||menuDialog.open)return;
+  if(!source||!canAnimate()||userPaused||document.hidden||!heroVisible||headerNavigationOpen())return;
   const token=generation;video.src=source;video.loop=true;video.preload='metadata';
-  try{await video.play();if(token!==generation)return;video.hidden=false;if(userPaused||document.hidden||!heroVisible||menuDialog.open)video.pause();}catch{if(token===generation)video.hidden=true;}
+  try{await video.play();if(token!==generation)return;video.hidden=false;if(userPaused||document.hidden||!heroVisible||headerNavigationOpen())video.pause();}catch{if(token===generation)video.hidden=true;}
  }
  function selectScene(id){rotation.select(id);setScene(id);}
  buttons.forEach((b,i)=>{b.addEventListener('click',()=>selectScene(b.dataset.scene));b.addEventListener('keydown',event=>{const delta={ArrowLeft:-1,ArrowRight:1}[event.key];if(delta){event.preventDefault();const next=buttons[(i+delta+buttons.length)%buttons.length];next.focus();selectScene(next.dataset.scene);}});});
@@ -53,6 +104,7 @@ if(video){
  video.addEventListener('error',()=>{video.hidden=true;});
  poster.addEventListener('load',()=>{if(canAnimate())poster.animate([{opacity:.5},{opacity:1}],{duration:400,easing:'ease-out'});});
  document.addEventListener('visibilitychange',syncPlayback);
+ document.addEventListener('header-navigation-change',syncPlayback);
  menuButton.addEventListener('click',syncPlayback);menuDialog.addEventListener('close',syncPlayback);
  new IntersectionObserver(([entry])=>{heroVisible=entry.isIntersecting;syncPlayback();},{threshold:0}).observe(video.closest('.home-hero'));
  reduced.addEventListener('change',()=>setScene(selected.id));
