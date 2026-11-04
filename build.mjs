@@ -22,7 +22,7 @@ const headerSections=[
  {key:'people',name:'People',href:'/people/',links:[['/people/#leadership-team','Leadership team'],['/people/#partners','Partners'],['/people/#technical-specialists','Technical specialists']]}
 ];
 const navChevron='<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m6 9 6 6 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
-function submenuLinks(section){return section.links.map(([href,label])=>`<a href="${url(href)}">${esc(label)}</a>`).join('');}
+function submenuLinks(section){return section.links.map(([href,label])=>`<a href="${esc(url(href))}"><span>${esc(label)}</span>${arrow}</a>`).join('');}
 function header(active='home'){
  const desktop=`<nav id="desktop-navigation" class="desktop-navigation" aria-label="Primary navigation">${headerSections.map(section=>`<div class="desktop-nav-item" data-desktop-nav><div class="desktop-nav-row"><a class="desktop-nav-link" href="${url(section.href)}"${section.key===active?' aria-current="page"':''}>${section.name}</a><button class="desktop-nav-toggle" aria-label="Toggle ${section.name} links" aria-controls="desktop-${section.key}-links" aria-expanded="false">${navChevron}</button></div><div class="desktop-submenu" id="desktop-${section.key}-links" hidden>${submenuLinks(section)}</div></div>`).join('')}</nav>`;
  const mobile=nav.map(([href,name,key])=>{

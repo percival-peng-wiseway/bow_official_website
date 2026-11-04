@@ -24,6 +24,7 @@ function setDesktopNavigation(item=null){
  desktopItems.forEach(group=>{
   const toggle=group.querySelector('.desktop-nav-toggle'),open=group===item;
   if(toggle.getAttribute('aria-expanded')!==String(open))changed=true;
+  group.classList.toggle('is-expanded',open);
   toggle.setAttribute('aria-expanded',String(open));
   document.getElementById(toggle.getAttribute('aria-controls')).hidden=!open;
  });
@@ -35,7 +36,9 @@ desktopItems.forEach(item=>{
  item.addEventListener('pointerleave',()=>{
   desktopCloseTimer=setTimeout(()=>{if(!item.contains(document.activeElement))setDesktopNavigation();},150);
  });
- item.addEventListener('focusout',event=>{if(!item.contains(event.relatedTarget))setDesktopNavigation();});
+ item.addEventListener('focusout',event=>{
+  if(item.classList.contains('is-expanded')&&!item.contains(event.relatedTarget)&&!item.matches(':hover'))setDesktopNavigation();
+ });
  toggle.addEventListener('click',()=>setDesktopNavigation(toggle.getAttribute('aria-expanded')==='true'?null:item));
  item.querySelector('.desktop-nav-row').addEventListener('keydown',event=>{
   if(event.key==='ArrowDown'){
@@ -64,6 +67,17 @@ matchMedia('(min-width:1101px)').addEventListener('change',event=>{
  setDesktopNavigation();if(event.matches&&menuDialog.open)setMenu(false);
 });
 const headerNavigationOpen=()=>menuDialog.open||!!desktopNav.querySelector('[aria-expanded="true"]');
+function updateNavigationCurrent(){
+ const currentURL=new URL(location.href);currentURL.searchParams.delete('release');
+ document.querySelectorAll('.desktop-submenu a,.mobile-nav-links a').forEach(anchor=>{
+  const target=new URL(anchor.href);
+  const current=target.pathname===currentURL.pathname&&target.search===currentURL.search&&target.hash===currentURL.hash;
+  if(current)anchor.setAttribute('aria-current',location.hash?'location':'page');else anchor.removeAttribute('aria-current');
+ });
+}
+window.addEventListener('hashchange',updateNavigationCurrent);
+window.addEventListener('popstate',updateNavigationCurrent);
+updateNavigationCurrent();
 
 // Only the selected state's clip is loaded. Missing footage never reuses a different state's photograph.
 const video=document.getElementById('hero-video'),poster=document.getElementById('hero-poster');
@@ -124,6 +138,7 @@ if(projectList){
   document.getElementById('project-empty').hidden=count!==0;document.getElementById('experience-notice').hidden=filters.status!=='experience';
   document.getElementById('reset-filters').hidden=Object.values(filters).every(v=>v==='all');
   if(push){const query=filterQuery(filters);history.pushState({},'',location.pathname+(query?'?'+query:'')+location.hash);}
+  updateNavigationCurrent();
  }
  tabs.forEach(b=>b.addEventListener('click',()=>{filters.status=b.dataset.statusFilter;draw(true);}));
  service.addEventListener('change',()=>{filters.service=service.value;draw(true);});sector.addEventListener('change',()=>{filters.sector=sector.value;draw(true);});
