@@ -423,3 +423,14 @@ html.page-enter main{animation:page-content-enter .18s ease both;}
 .hero-controls .playback svg{width:18px;height:18px;}
 .hero-controls .playback:hover{background:#ffffff26;}
 @media(max-width:600px){.hero-controls>p{width:auto;flex:1;}.hero-controls .playback{margin-left:auto;}}
+
+/* Project banners show the whole supplied image; captions sit outside the photo. */
+.project-hero .detail-hero-image{display:grid;grid-template-rows:minmax(0,1fr) auto;height:auto;min-height:0;background:#292929;}
+.project-hero .detail-hero-image>img{position:static;display:block;align-self:center;width:100%;height:auto;max-height:640px;object-fit:contain;object-position:center;}
+.project-hero .detail-hero-image:after{display:none;}
+.project-hero .detail-hero-image>span,.project-hero[data-services~="energy"] .detail-hero-image>span{position:static;display:block;width:auto;max-width:none;margin:0;padding:14px 20px;border-radius:0;background:#242424;color:#d3d1ca;font-size:13px;line-height:1.5;}
+@media(max-width:700px){
+ .project-hero .detail-hero-image{grid-template-rows:auto auto;}
+ .project-hero .detail-hero-image>img{max-height:none;}
+ .project-hero .detail-hero-image>span{padding:12px 18px;font-size:12px;}
+}
