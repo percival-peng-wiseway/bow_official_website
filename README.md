@@ -77,3 +77,7 @@ The contact-page email is enlarged and LinkedIn uses an accessible icon button. 
 ## Homepage rotation
 
 The homepage advances every two seconds through states with supplied posters or videos. States without media remain manually selectable. Manual selection resets the two-second timer. The pause/play icon controls rotation and video playback; rotation pauses while the page is hidden, the hero is outside the viewport, or the menu is open. Reduced-motion preferences disable automatic rotation.
+
+## Shared module templates
+
+Use `sectionTitle`, `moduleSection` and `infoCard` in `build.mjs` for ordinary content sections. Home collections, About sections, people headings and related-project sections share these templates. Spacing and typography use the final `--module-*` tokens in `dist/styles.css`. Text cards share header/body rows so wrapping titles keep their descriptions aligned. Keep the approved hero, contact callout, full-image project banners and footer as their dedicated components.
