@@ -1,0 +1,1075 @@
+[
+  {
+    "id": "A05",
+    "source": "BOW Website - Image Selection v1 - Review Pack/A_Home hero - Victoria/A05_ESR-Cremorne_ESR-031.jpg",
+    "sha256": "7367247b15e8676fcb7e9a294bbd4aeec8574c0836366e46622da3ab3b30f221",
+    "rights": "Not documented in pack; BOW to confirm before public release",
+    "used": true,
+    "outputs": [
+      {
+        "file": "assets/review-A05-600.webp",
+        "width": 600,
+        "height": 338,
+        "bytes": 44682
+      },
+      {
+        "file": "assets/review-A05.webp",
+        "width": 1600,
+        "height": 900,
+        "bytes": 233558
+      }
+    ],
+    "original_dimensions": [
+      1800,
+      1013
+    ],
+    "used_on": [
+      "/about/"
+    ]
+  },
+  {
+    "id": "A06",
+    "source": "BOW Website - Image Selection v1 - Review Pack/A_Home hero - Victoria/A06_ESR-Cremorne_ESR-035.jpg",
+    "sha256": "06595411f9bd560782f896c8f01119b871145bd1e398570427cbc6d08eb975dd",
+    "rights": "Not documented in pack; BOW to confirm before public release",
+    "used": false,
+    "outputs": [],
+    "original_dimensions": [
+      1800,
+      1013
+    ],
+    "used_on": []
+  },
+  {
+    "id": "A07",
+    "source": "BOW Website - Image Selection v1 - Review Pack/A_Home hero - Victoria/A07_ESR-general_ESR-121.jpg",
+    "sha256": "18fbe3c64a10783f45fc0a898bb571d3b1a2ec679c6cbdb8c54a63099144b339",
+    "rights": "Not documented in pack; BOW to confirm before public release",
+    "used": false,
+    "outputs": [
+      {
+        "file": "assets/review-A07-600.webp",
+        "width": 600,
+        "height": 450,
+        "bytes": 27046
+      },
+      {
+        "file": "assets/review-A07.webp",
+        "width": 960,
+        "height": 720,
+        "bytes": 53588
+      }
+    ],
+    "original_dimensions": [
+      960,
+      720
+    ],
+    "used_on": []
+  },
+  {
+    "id": "A08",
+    "source": "BOW Website - Image Selection v1 - Review Pack/A_Home hero - Victoria/A08_ESR-general_ESR-120.jpg",
+    "sha256": "d2a9d70dc70b195727179abea304bb108a0a3b0a88c189d2764eba10238e3930",
+    "rights": "Not documented in pack; BOW to confirm before public release",
+    "used": false,
+    "outputs": [],
+    "original_dimensions": [
+      720,
+      960
+    ],
+    "used_on": []
+  },
+  {
+    "id": "A09",
+    "source": "BOW Website - Image Selection v1 - Review Pack/A_Home hero - Victoria/A09_ESR-general_ESR-117.jpg",
+    "sha256": "b0597590c6372f73eb1062a353bec2f043e3cd600f9660da8ef20459805c3278",
+    "rights": "Not documented in pack; BOW to confirm before public release",
+    "used": false,
+    "outputs": [],
+    "original_dimensions": [
+      720,
+      960
+    ],
+    "used_on": []
+  },
+  {
+    "id": "A10",
+    "source": "BOW Website - Image Selection v1 - Review Pack/A_Home hero - Victoria/A10_ESR-general_ESR-126.jpg",
+    "sha256": "c0fcddfa3122397e815c13790d11492d01a2049ce9d4ec96a4f964d692e31d14",
+    "rights": "Not documented in pack; BOW to confirm before public release",
+    "used": false,
+    "outputs": [
+      {
+        "file": "assets/review-A10-600.webp",
+        "width": 600,
+        "height": 252,
+        "bytes": 20036
+      },
+      {
+        "file": "assets/review-A10.webp",
+        "width": 1600,
+        "height": 673,
+        "bytes": 80402
+      }
+    ],
+    "original_dimensions": [
+      1800,
+      757
+    ],
+    "used_on": []
+  },
+  {
+    "id": "A11",
+    "source": "BOW Website - Image Selection v1 - Review Pack/A_Home hero - Victoria/A11_Hedgeley-Malvern-East_HEDG-157.jpg",
+    "sha256": "3d98e60b76314691ed495437ad7866f4ee235a895654d0e969ece91e8a0dbbc6",
+    "rights": "Not documented in pack; BOW to confirm before public release",
+    "used": true,
+    "outputs": [
+      {
+        "file": "assets/review-A11-600.webp",
+        "width": 600,
+        "height": 338,
+        "bytes": 58084
+      },
+      {
+        "file": "assets/review-A11.webp",
+        "width": 1280,
+        "height": 720,
+        "bytes": 213816
+      }
+    ],
+    "original_dimensions": [
+      1280,
+      720
+    ],
+    "used_on": [
+      "/projects/",
+      "/projects/hedgeley/",
+      "/services/structures/"
+    ]
+  },
+  {
+    "id": "A12",
+    "source": "BOW Website - Image Selection v1 - Review Pack/A_Home hero - Victoria/A12_Home-of-the-Matildas_MAT-002.jpg",
+    "sha256": "78eb66be3c3d00ce5de097e1a39244508e9f3bf32d6b9542f3296e3881bc6e74",
+    "rights": "Not documented in pack; BOW to confirm before public release",
+    "used": false,
+    "outputs": [
+      {
+        "file": "assets/review-A12-600.webp",
+        "width": 600,
+        "height": 338,
+        "bytes": 45180
+      },
+      {
+        "file": "assets/review-A12.webp",
+        "width": 1600,
+        "height": 900,
+        "bytes": 242854
+      }
+    ],
+    "original_dimensions": [
+      1800,
+      1013
+    ],
+    "used_on": []
+  },
+  {
+    "id": "B01",
+    "source": "BOW Website - Image Selection v1 - Review Pack/B_Completed buildings/B01_Alba-Thermal-Springs_ALBA-003.jpg",
+    "sha256": "819c34cad6e74a8e95c1a7b6dd816f0e5ff1e5d35da87a6c4599006955d90ba2",
+    "rights": "Not documented in pack; BOW to confirm before public release",
+    "used": true,
+    "outputs": [
+      {
+        "file": "assets/review-B01-600.webp",
+        "width": 600,
+        "height": 403,
+        "bytes": 72968
+      },
+      {
+        "file": "assets/review-B01.webp",
+        "width": 1600,
+        "height": 1074,
+        "bytes": 389868
+      }
+    ],
+    "original_dimensions": [
+      1800,
+      1208
+    ],
+    "used_on": [
+      "/projects/",
+      "/projects/alba/",
+      "/services/structures/"
+    ]
+  },
+  {
+    "id": "B02",
+    "source": "BOW Website - Image Selection v1 - Review Pack/B_Completed buildings/B02_Alba-Thermal-Springs_ALBA-001.jpg",
+    "sha256": "9b28fe50520f6c0474cf5b2a754302c1078b1804c7ad711b28404b1fbc6ab67a",
+    "rights": "Not documented in pack; BOW to confirm before public release",
+    "used": true,
+    "outputs": [
+      {
+        "file": "assets/review-B02-600.webp",
+        "width": 600,
+        "height": 427,
+        "bytes": 30330
+      },
+      {
+        "file": "assets/review-B02.webp",
+        "width": 1406,
+        "height": 1000,
+        "bytes": 164090
+      }
+    ],
+    "original_dimensions": [
+      1406,
+      1000
+    ],
+    "used_on": [
+      "/projects/alba/"
+    ]
+  },
+  {
+    "id": "B03",
+    "source": "BOW Website - Image Selection v1 - Review Pack/B_Completed buildings/B03_Alba-Thermal-Springs_ALBA-004.jpg",
+    "sha256": "b583af6f66856d7820d55e68b9de09f9cc44909f232860e99fcbe12358953ed5",
+    "rights": "Not documented in pack; BOW to confirm before public release",
+    "used": true,
+    "outputs": [
+      {
+        "file": "assets/review-B03-600.webp",
+        "width": 600,
+        "height": 900,
+        "bytes": 52906
+      },
+      {
+        "file": "assets/review-B03.webp",
+        "width": 1200,
+        "height": 1800,
+        "bytes": 181038
+      }
+    ],
+    "original_dimensions": [
+      1200,
+      1800
+    ],
+    "used_on": [
+      "/projects/alba/"
+    ]
+  },
+  {
+    "id": "B04",
+    "source": "BOW Website - Image Selection v1 - Review Pack/B_Completed buildings/B04_Alba-Thermal-Springs_ALBA-012.jpg",
+    "sha256": "b9c82d1826a431edabb90ad5d0967dabc69f22bb36f90379521db17bacd6a749",
+    "rights": "Not documented in pack; BOW to confirm before public release",
+    "used": true,
+    "outputs": [
+      {
+        "file": "assets/review-B04-600.webp",
+        "width": 600,
+        "height": 338,
+        "bytes": 14718
+      },
+      {
+        "file": "assets/review-B04.webp",
+        "width": 1582,
+        "height": 890,
+        "bytes": 130332
+      }
+    ],
+    "original_dimensions": [
+      1582,
+      890
+    ],
+    "used_on": [
+      "/projects/alba/"
+    ]
+  },
+  {
+    "id": "B05",
+    "source": "BOW Website - Image Selection v1 - Review Pack/B_Completed buildings/B05_Brighton_WEB-054.jpg",
+    "sha256": "a6fa83252fa8eef6aa6a19772a858914aa33df5c1baa6e1a7c392fe3cef61b06",
+    "rights": "Not documented in pack; BOW to confirm before public release",
+    "used": true,
+    "outputs": [
+      {
+        "file": "assets/review-B05-600.webp",
+        "width": 600,
+        "height": 388,
+        "bytes": 17382
+      },
+      {
+        "file": "assets/review-B05.webp",
+        "width": 1320,
+        "height": 854,
+        "bytes": 63806
+      }
+    ],
+    "original_dimensions": [
+      1320,
+      854
+    ],
+    "used_on": [
+      "/",
+      "/projects/",
+      "/projects/international-brighton/",
+      "/services/construction/"
+    ]
+  },
+  {
+    "id": "B06",
+    "source": "BOW Website - Image Selection v1 - Review Pack/B_Completed buildings/B06_Brighton_WEB-052.jpg",
+    "sha256": "2aa8ca4ea226570edc5f1e8dd65445bec90b747fb9228dd126ce2b30602030f8",
+    "rights": "Not documented in pack; BOW to confirm before public release",
+    "used": true,
+    "outputs": [
+      {
+        "file": "assets/review-B06-600.webp",
+        "width": 600,
+        "height": 398,
+        "bytes": 28104
+      },
+      {
+        "file": "assets/review-B06.webp",
+        "width": 1320,
+        "height": 875,
+        "bytes": 103194
+      }
+    ],
+    "original_dimensions": [
+      1320,
+      875
+    ],
+    "used_on": [
+      "/projects/international-brighton/",
+      "/services/construction/"
+    ]
+  },
+  {
+    "id": "B07",
+    "source": "BOW Website - Image Selection v1 - Review Pack/B_Completed buildings/B07_Brighton_WEB-055.jpg",
+    "sha256": "b643b2e6d3274873c45150fca66dc7b4b1929371e5e007b4c0a3f8ff6d34e7cd",
+    "rights": "Not documented in pack; BOW to confirm before public release",
+    "used": true,
+    "outputs": [
+      {
+        "file": "assets/review-B07-600.webp",
+        "width": 600,
+        "height": 323,
+        "bytes": 25840
+      },
+      {
+        "file": "assets/review-B07.webp",
+        "width": 1320,
+        "height": 711,
+        "bytes": 116848
+      }
+    ],
+    "original_dimensions": [
+      1320,
+      711
+    ],
+    "used_on": [
+      "/",
+      "/projects/international-brighton/",
+      "/services/",
+      "/services/construction/"
+    ]
+  },
+  {
+    "id": "B08",
+    "source": "BOW Website - Image Selection v1 - Review Pack/B_Completed buildings/B08_189-Toorak-Rd-South-Yarra_WEB-025.jpg",
+    "sha256": "0f63cc17dcebda9b7efd625f72433c85dbd7b4866f217be9c338736e6d96a2ce",
+    "rights": "Not documented in pack; BOW to confirm before public release",
+    "used": false,
+    "outputs": [],
+    "original_dimensions": [
+      1800,
+      1200
+    ],
+    "used_on": []
+  },
+  {
+    "id": "B09",
+    "source": "BOW Website - Image Selection v1 - Review Pack/B_Completed buildings/B09_189-Toorak-Rd-South-Yarra_WEB-042.jpg",
+    "sha256": "21d2656251df45400f7e4b6483e467160103ed4bc9d5b6b525f07ffdbd4930e3",
+    "rights": "Not documented in pack; BOW to confirm before public release",
+    "used": false,
+    "outputs": [],
+    "original_dimensions": [
+      1800,
+      1200
+    ],
+    "used_on": []
+  },
+  {
+    "id": "B10",
+    "source": "BOW Website - Image Selection v1 - Review Pack/B_Completed buildings/B10_189-Toorak-Rd-South-Yarra_WEB-020.jpg",
+    "sha256": "9508bcd134ef3b8e8d9ede15e93ab8d6a4eb3ae268efe9f98e7385c8c5b50e7a",
+    "rights": "Not documented in pack; BOW to confirm before public release",
+    "used": false,
+    "outputs": [],
+    "original_dimensions": [
+      1800,
+      1200
+    ],
+    "used_on": []
+  },
+  {
+    "id": "B11",
+    "source": "BOW Website - Image Selection v1 - Review Pack/B_Completed buildings/B11_ESR-Malvern_ESR-267.jpg",
+    "sha256": "58b0d7763272b98243bdf32745905db655d0cafdca3007c945c0f62cffcc4dff",
+    "rights": "Not documented in pack; BOW to confirm before public release",
+    "used": false,
+    "outputs": [],
+    "original_dimensions": [
+      1800,
+      1350
+    ],
+    "used_on": []
+  },
+  {
+    "id": "B12",
+    "source": "BOW Website - Image Selection v1 - Review Pack/B_Completed buildings/B12_ESR-Malvern_ESR-265.jpg",
+    "sha256": "47c7b9968c27867531406de3635406af4234cc3be6a452259676e7ed87a0d3ff",
+    "rights": "Not documented in pack; BOW to confirm before public release",
+    "used": false,
+    "outputs": [],
+    "original_dimensions": [
+      1800,
+      1350
+    ],
+    "used_on": []
+  },
+  {
+    "id": "B13",
+    "source": "BOW Website - Image Selection v1 - Review Pack/B_Completed buildings/B13_ESR-Doncaster_ESR-286.jpg",
+    "sha256": "1489a191c6b7f5bd7a27adabad9763ff0a23a5de97068acb8d0dbc5018052b3f",
+    "rights": "Not documented in pack; BOW to confirm before public release",
+    "used": false,
+    "outputs": [],
+    "original_dimensions": [
+      1800,
+      1350
+    ],
+    "used_on": []
+  },
+  {
+    "id": "B14",
+    "source": "BOW Website - Image Selection v1 - Review Pack/B_Completed buildings/B14_ESR-Doncaster_ESR-283.jpg",
+    "sha256": "685e172dc2d894bd07d6d6b99d951c0c2338dd6512ddf1794c2259070bd6953d",
+    "rights": "Not documented in pack; BOW to confirm before public release",
+    "used": false,
+    "outputs": [],
+    "original_dimensions": [
+      1800,
+      1350
+    ],
+    "used_on": []
+  },
+  {
+    "id": "C01",
+    "source": "BOW Website - Image Selection v1 - Review Pack/C_Structures - groundworks piling retention/C01_ESR-general_ESR-148.jpg",
+    "sha256": "6e51f535d38c4222b18f0737b4c095c7b729b6434ea1a038d0b7cc7e3c3f73f1",
+    "rights": "Not documented in pack; BOW to confirm before public release",
+    "used": true,
+    "outputs": [
+      {
+        "file": "assets/review-C01-600.webp",
+        "width": 600,
+        "height": 600,
+        "bytes": 38092
+      },
+      {
+        "file": "assets/review-C01.webp",
+        "width": 640,
+        "height": 640,
+        "bytes": 42638
+      }
+    ],
+    "original_dimensions": [
+      640,
+      640
+    ],
+    "used_on": [
+      "/services/structures/"
+    ]
+  },
+  {
+    "id": "C02",
+    "source": "BOW Website - Image Selection v1 - Review Pack/C_Structures - groundworks piling retention/C02_ESR-general_ESR-227.jpg",
+    "sha256": "6210fe1841b66ea0365f118bc255bc5228b77cf8c9b2cd9cfe38ba2f958534f6",
+    "rights": "Not documented in pack; BOW to confirm before public release",
+    "used": false,
+    "outputs": [],
+    "original_dimensions": [
+      602,
+      402
+    ],
+    "used_on": []
+  },
+  {
+    "id": "C03",
+    "source": "BOW Website - Image Selection v1 - Review Pack/C_Structures - groundworks piling retention/C03_ESR-general_ESR-228.jpg",
+    "sha256": "cdb77476767b7ba55b641b9cea1d7a50ca85962b994ec218b5a9fc8a851f483a",
+    "rights": "Not documented in pack; BOW to confirm before public release",
+    "used": false,
+    "outputs": [],
+    "original_dimensions": [
+      602,
+      451
+    ],
+    "used_on": []
+  },
+  {
+    "id": "C04",
+    "source": "BOW Website - Image Selection v1 - Review Pack/C_Structures - groundworks piling retention/C04_ESR-general_ESR-135.jpg",
+    "sha256": "86a7ff97686bbf9fd3628925ce9fab7c685b7df0cd8de26273fb60af95e80eee",
+    "rights": "Not documented in pack; BOW to confirm before public release",
+    "used": false,
+    "outputs": [],
+    "original_dimensions": [
+      640,
+      640
+    ],
+    "used_on": []
+  },
+  {
+    "id": "C05",
+    "source": "BOW Website - Image Selection v1 - Review Pack/C_Structures - groundworks piling retention/C05_ESR-general_ESR-066.jpg",
+    "sha256": "e83eb8e4fbe1241f7777a88cf94d9e046de5d62a6c9b2d9c3bea71b766373c1c",
+    "rights": "Not documented in pack; BOW to confirm before public release",
+    "used": false,
+    "outputs": [],
+    "original_dimensions": [
+      720,
+      960
+    ],
+    "used_on": []
+  },
+  {
+    "id": "C06",
+    "source": "BOW Website - Image Selection v1 - Review Pack/C_Structures - groundworks piling retention/C06_ESR-general_ESR-063.jpg",
+    "sha256": "4e6641145135bf69b7dbb38cca2f90070dbaf6ad396c8e122d4f7ab78244fe4a",
+    "rights": "Not documented in pack; BOW to confirm before public release",
+    "used": false,
+    "outputs": [],
+    "original_dimensions": [
+      720,
+      960
+    ],
+    "used_on": []
+  },
+  {
+    "id": "C07",
+    "source": "BOW Website - Image Selection v1 - Review Pack/C_Structures - groundworks piling retention/C07_ESR-general_ESR-130.jpg",
+    "sha256": "0413a54e9f4fc5535075c350140ea7e1a3c1fc784b24585664ea4944c59b1c5c",
+    "rights": "Not documented in pack; BOW to confirm before public release",
+    "used": false,
+    "outputs": [],
+    "original_dimensions": [
+      640,
+      640
+    ],
+    "used_on": []
+  },
+  {
+    "id": "C08",
+    "source": "BOW Website - Image Selection v1 - Review Pack/C_Structures - groundworks piling retention/C08_ESR-general_ESR-157.jpg",
+    "sha256": "d32dae61bc5c76ed6f6c0a0c68f8553dff6f8382224a72f1d12471d661e8b260",
+    "rights": "Not documented in pack; BOW to confirm before public release",
+    "used": false,
+    "outputs": [],
+    "original_dimensions": [
+      640,
+      640
+    ],
+    "used_on": []
+  },
+  {
+    "id": "C09",
+    "source": "BOW Website - Image Selection v1 - Review Pack/C_Structures - groundworks piling retention/C09_Hedgeley-Malvern-East_HEDG-012.jpg",
+    "sha256": "cbfe5399d0027e0fae9783fee489da71aceb668a6cfdd92137c4abb65e13b705",
+    "rights": "Not documented in pack; BOW to confirm before public release",
+    "used": true,
+    "outputs": [
+      {
+        "file": "assets/review-C09-600.webp",
+        "width": 600,
+        "height": 450,
+        "bytes": 78742
+      },
+      {
+        "file": "assets/review-C09.webp",
+        "width": 1600,
+        "height": 1200,
+        "bytes": 412238
+      }
+    ],
+    "original_dimensions": [
+      1800,
+      1350
+    ],
+    "used_on": [
+      "/projects/hedgeley/",
+      "/services/structures/"
+    ]
+  },
+  {
+    "id": "C10",
+    "source": "BOW Website - Image Selection v1 - Review Pack/C_Structures - groundworks piling retention/C10_ESR-general_ESR-174.jpg",
+    "sha256": "3d7187bad5010bfc65f1a0157a169fc69156ace61297694f8c0a4f4bd43e0d55",
+    "rights": "Not documented in pack; BOW to confirm before public release",
+    "used": false,
+    "outputs": [],
+    "original_dimensions": [
+      1800,
+      1350
+    ],
+    "used_on": []
+  },
+  {
+    "id": "C11",
+    "source": "BOW Website - Image Selection v1 - Review Pack/C_Structures - groundworks piling retention/C11_ESR-Malvern_ESR-272.jpg",
+    "sha256": "5b83a188cf99a740693706ddb6c39d16e304ea5547cfee818bf330a6200dc0b9",
+    "rights": "Not documented in pack; BOW to confirm before public release",
+    "used": false,
+    "outputs": [],
+    "original_dimensions": [
+      1800,
+      1350
+    ],
+    "used_on": []
+  },
+  {
+    "id": "C12",
+    "source": "BOW Website - Image Selection v1 - Review Pack/C_Structures - groundworks piling retention/C12_ESR-general_ESR-055.jpg",
+    "sha256": "24058d9415ebe0f8b302eeaff255c589a5eff9f28b173768b541de6e8c75c9e0",
+    "rights": "Not documented in pack; BOW to confirm before public release",
+    "used": false,
+    "outputs": [],
+    "original_dimensions": [
+      960,
+      720
+    ],
+    "used_on": []
+  },
+  {
+    "id": "D01",
+    "source": "BOW Website - Image Selection v1 - Review Pack/D_Structures - concrete formwork PT/D01_Hedgeley-Malvern-East_HEDG-006.jpg",
+    "sha256": "bee449b17570069974d7b9f37abc48125aad9e10156f050f86c78f64f6ad30ea",
+    "rights": "Not documented in pack; BOW to confirm before public release",
+    "used": false,
+    "outputs": [],
+    "original_dimensions": [
+      1800,
+      1350
+    ],
+    "used_on": []
+  },
+  {
+    "id": "D02",
+    "source": "BOW Website - Image Selection v1 - Review Pack/D_Structures - concrete formwork PT/D02_Hedgeley-Malvern-East_HEDG-064.jpg",
+    "sha256": "04ceea7fb0caef8a50a9f0e6cbe8109ef9c8df27aa7edeab257db34ef1f6c038",
+    "rights": "Not documented in pack; BOW to confirm before public release",
+    "used": true,
+    "outputs": [
+      {
+        "file": "assets/review-D02-600.webp",
+        "width": 600,
+        "height": 450,
+        "bytes": 68922
+      },
+      {
+        "file": "assets/review-D02.webp",
+        "width": 1600,
+        "height": 1200,
+        "bytes": 418000
+      }
+    ],
+    "original_dimensions": [
+      1800,
+      1350
+    ],
+    "used_on": [
+      "/projects/hedgeley/"
+    ]
+  },
+  {
+    "id": "D03",
+    "source": "BOW Website - Image Selection v1 - Review Pack/D_Structures - concrete formwork PT/D03_Hedgeley-Malvern-East_HEDG-139.jpg",
+    "sha256": "228be87ac91bd477ddc449df94011711b2703f51b1c81ecb4817c06804249774",
+    "rights": "Not documented in pack; BOW to confirm before public release",
+    "used": true,
+    "outputs": [
+      {
+        "file": "assets/review-D03-600.webp",
+        "width": 600,
+        "height": 450,
+        "bytes": 87048
+      },
+      {
+        "file": "assets/review-D03.webp",
+        "width": 1600,
+        "height": 1200,
+        "bytes": 457880
+      }
+    ],
+    "original_dimensions": [
+      1800,
+      1350
+    ],
+    "used_on": [
+      "/",
+      "/projects/hedgeley/",
+      "/services/",
+      "/services/structures/"
+    ]
+  },
+  {
+    "id": "D04",
+    "source": "BOW Website - Image Selection v1 - Review Pack/D_Structures - concrete formwork PT/D04_Hedgeley-Malvern-East_HEDG-123.jpg",
+    "sha256": "f15b9fd0ccf007d66e862fbdd0382adaea3fd8b396066da97551212d5c933738",
+    "rights": "Not documented in pack; BOW to confirm before public release",
+    "used": true,
+    "outputs": [
+      {
+        "file": "assets/review-D04-600.webp",
+        "width": 600,
+        "height": 450,
+        "bytes": 68944
+      },
+      {
+        "file": "assets/review-D04.webp",
+        "width": 1600,
+        "height": 1200,
+        "bytes": 290030
+      }
+    ],
+    "original_dimensions": [
+      1800,
+      1350
+    ],
+    "used_on": [
+      "/projects/hedgeley/",
+      "/services/structures/"
+    ]
+  },
+  {
+    "id": "D05",
+    "source": "BOW Website - Image Selection v1 - Review Pack/D_Structures - concrete formwork PT/D05_Hedgeley-Malvern-East_HEDG-167.jpg",
+    "sha256": "79efba5acd2229551fd007768864cbc72c0ceb2cc080904423c74105a4b9a966",
+    "rights": "Not documented in pack; BOW to confirm before public release",
+    "used": true,
+    "outputs": [
+      {
+        "file": "assets/review-D05-600.webp",
+        "width": 600,
+        "height": 800,
+        "bytes": 146562
+      },
+      {
+        "file": "assets/review-D05.webp",
+        "width": 1350,
+        "height": 1800,
+        "bytes": 529012
+      }
+    ],
+    "original_dimensions": [
+      1350,
+      1800
+    ],
+    "used_on": [
+      "/projects/hedgeley/",
+      "/services/structures/"
+    ]
+  },
+  {
+    "id": "D06",
+    "source": "BOW Website - Image Selection v1 - Review Pack/D_Structures - concrete formwork PT/D06_Hedgeley-Malvern-East_HEDG-179.jpg",
+    "sha256": "1817b9848077ef13c254c48ed7be01acff4657a92c16762ebab0fdbd521efaf7",
+    "rights": "Not documented in pack; BOW to confirm before public release",
+    "used": true,
+    "outputs": [
+      {
+        "file": "assets/review-D06-600.webp",
+        "width": 600,
+        "height": 450,
+        "bytes": 74234
+      },
+      {
+        "file": "assets/review-D06.webp",
+        "width": 1600,
+        "height": 1200,
+        "bytes": 333462
+      }
+    ],
+    "original_dimensions": [
+      1800,
+      1350
+    ],
+    "used_on": [
+      "/projects/hedgeley/",
+      "/services/structures/"
+    ]
+  },
+  {
+    "id": "D07",
+    "source": "BOW Website - Image Selection v1 - Review Pack/D_Structures - concrete formwork PT/D07_Hedgeley-Malvern-East_HEDG-202.jpg",
+    "sha256": "19977e4cc02c178cf600027959b602f97ff04b6d4a28fa0bfea9f45b41936535",
+    "rights": "Not documented in pack; BOW to confirm before public release",
+    "used": false,
+    "outputs": [],
+    "original_dimensions": [
+      1800,
+      1350
+    ],
+    "used_on": []
+  },
+  {
+    "id": "D08",
+    "source": "BOW Website - Image Selection v1 - Review Pack/D_Structures - concrete formwork PT/D08_Hedgeley-Malvern-East_HEDG-242.jpg",
+    "sha256": "bacd8e114516aa31f02547015d131fa11242555d30c1b061520469eee18ed7fe",
+    "rights": "Not documented in pack; BOW to confirm before public release",
+    "used": true,
+    "outputs": [
+      {
+        "file": "assets/review-D08-600.webp",
+        "width": 600,
+        "height": 450,
+        "bytes": 39152
+      },
+      {
+        "file": "assets/review-D08.webp",
+        "width": 1600,
+        "height": 1200,
+        "bytes": 179544
+      }
+    ],
+    "original_dimensions": [
+      1800,
+      1350
+    ],
+    "used_on": [
+      "/projects/hedgeley/",
+      "/services/structures/"
+    ]
+  },
+  {
+    "id": "D09",
+    "source": "BOW Website - Image Selection v1 - Review Pack/D_Structures - concrete formwork PT/D09_ESR-Cremorne_ESR-005.jpg",
+    "sha256": "a1092f96feaf0b31368d8e9020c9e5b2d64165ad7c4f893f6d6fc7c66c462df9",
+    "rights": "Not documented in pack; BOW to confirm before public release",
+    "used": false,
+    "outputs": [],
+    "original_dimensions": [
+      1800,
+      1350
+    ],
+    "used_on": []
+  },
+  {
+    "id": "D10",
+    "source": "BOW Website - Image Selection v1 - Review Pack/D_Structures - concrete formwork PT/D10_ESR-Cremorne_ESR-010.jpg",
+    "sha256": "171f23db8998b7218c069e6b5cec209fc58d2bc145d94b143ccd2ac93432afdc",
+    "rights": "Not documented in pack; BOW to confirm before public release",
+    "used": false,
+    "outputs": [],
+    "original_dimensions": [
+      1350,
+      1800
+    ],
+    "used_on": []
+  },
+  {
+    "id": "D11",
+    "source": "BOW Website - Image Selection v1 - Review Pack/D_Structures - concrete formwork PT/D11_ESR-Cremorne_ESR-016.jpg",
+    "sha256": "f257bacf26e96202f6cdbbde641718c151ee07c174d8cbb1f807bb5e6cd31435",
+    "rights": "Not documented in pack; BOW to confirm before public release",
+    "used": false,
+    "outputs": [],
+    "original_dimensions": [
+      1800,
+      1350
+    ],
+    "used_on": []
+  },
+  {
+    "id": "D12",
+    "source": "BOW Website - Image Selection v1 - Review Pack/D_Structures - concrete formwork PT/D12_ESR-High-Street_ESR-242.jpg",
+    "sha256": "55526ac89f62187c9e8662ce005975299e2c32bddfe7476e563d574b8860f117",
+    "rights": "Not documented in pack; BOW to confirm before public release",
+    "used": false,
+    "outputs": [],
+    "original_dimensions": [
+      1800,
+      1350
+    ],
+    "used_on": []
+  },
+  {
+    "id": "D13",
+    "source": "BOW Website - Image Selection v1 - Review Pack/D_Structures - concrete formwork PT/D13_ESR-Southbank_ESR-254.jpg",
+    "sha256": "05dbb7bdc3e72c5476a5c84e1894c5da33789616ad1605c93eeacedad8445bd4",
+    "rights": "Not documented in pack; BOW to confirm before public release",
+    "used": false,
+    "outputs": [],
+    "original_dimensions": [
+      1800,
+      1350
+    ],
+    "used_on": []
+  },
+  {
+    "id": "D14",
+    "source": "BOW Website - Image Selection v1 - Review Pack/D_Structures - concrete formwork PT/D14_ESR-Southbank_ESR-263.jpg",
+    "sha256": "51bad038793908ee21e690f59be198d45a4fa77f8ed32fa3c4917558612ae82c",
+    "rights": "Not documented in pack; BOW to confirm before public release",
+    "used": false,
+    "outputs": [],
+    "original_dimensions": [
+      1800,
+      1350
+    ],
+    "used_on": []
+  },
+  {
+    "id": "D15",
+    "source": "BOW Website - Image Selection v1 - Review Pack/D_Structures - concrete formwork PT/D15_Home-of-the-Matildas_MAT-003.jpg",
+    "sha256": "ce9ec34ff8c5aa8e22bb83114b13336e044e992355f03a6f723fb80e4e9724c3",
+    "rights": "Not documented in pack; BOW to confirm before public release",
+    "used": true,
+    "outputs": [
+      {
+        "file": "assets/review-D15-600.webp",
+        "width": 600,
+        "height": 338,
+        "bytes": 60130
+      },
+      {
+        "file": "assets/review-D15.webp",
+        "width": 1600,
+        "height": 900,
+        "bytes": 308102
+      }
+    ],
+    "original_dimensions": [
+      1800,
+      1013
+    ],
+    "used_on": [
+      "/services/infrastructure/"
+    ]
+  },
+  {
+    "id": "D16",
+    "source": "BOW Website - Image Selection v1 - Review Pack/D_Structures - concrete formwork PT/D16_Home-of-the-Matildas_MAT-001.jpg",
+    "sha256": "4fb1c7922f79345974e269edb3ae0e8c578c5ea09f6b4dbf3ebef5776a9480e1",
+    "rights": "Not documented in pack; BOW to confirm before public release",
+    "used": true,
+    "outputs": [
+      {
+        "file": "assets/review-D16-600.webp",
+        "width": 600,
+        "height": 338,
+        "bytes": 53284
+      },
+      {
+        "file": "assets/review-D16.webp",
+        "width": 1600,
+        "height": 900,
+        "bytes": 272072
+      }
+    ],
+    "original_dimensions": [
+      1800,
+      1013
+    ],
+    "used_on": [
+      "/",
+      "/services/",
+      "/services/infrastructure/"
+    ]
+  },
+  {
+    "id": "F01",
+    "source": "BOW Website - Image Selection v1 - Review Pack/F_KPA renders - rights to confirm/F01_Rod-Laver-Arena,-Melbourne-Park_KPA-053.jpg",
+    "sha256": "42747dcb4c1233836d012e0628650a935a2b7086c81c957ab7db71675681243e",
+    "rights": "KPA: rights explicitly to confirm; excluded from website output",
+    "used": false,
+    "outputs": [],
+    "original_dimensions": [
+      804,
+      433
+    ],
+    "used_on": []
+  },
+  {
+    "id": "F02",
+    "source": "BOW Website - Image Selection v1 - Review Pack/F_KPA renders - rights to confirm/F02_Melbourne-Metro-Tunnel_KPA-045.jpg",
+    "sha256": "0d0d995e9286cd8fde6ca8ac281fa44e3198eb55d26b5fb81b756439d160be99",
+    "rights": "KPA: rights explicitly to confirm; excluded from website output",
+    "used": false,
+    "outputs": [],
+    "original_dimensions": [
+      720,
+      495
+    ],
+    "used_on": []
+  },
+  {
+    "id": "F03",
+    "source": "BOW Website - Image Selection v1 - Review Pack/F_KPA renders - rights to confirm/F03_Paragon_KPA-051.jpg",
+    "sha256": "b1828ce812fcefdc82fc24dc7ae1dc7d08c64e5d8ceb71363baf9b1bb72db147",
+    "rights": "KPA: rights explicitly to confirm; excluded from website output",
+    "used": false,
+    "outputs": [],
+    "original_dimensions": [
+      708,
+      720
+    ],
+    "used_on": []
+  },
+  {
+    "id": "F04",
+    "source": "BOW Website - Image Selection v1 - Review Pack/F_KPA renders - rights to confirm/F04_291-Geroge-St,-Watirna-South_KPA-014.jpg",
+    "sha256": "cbe35f0e2b829e7495047859578ccd48068e9516592841286cd164a54d49d720",
+    "rights": "KPA: rights explicitly to confirm; excluded from website output",
+    "used": false,
+    "outputs": [],
+    "original_dimensions": [
+      761,
+      507
+    ],
+    "used_on": []
+  },
+  {
+    "id": "F05",
+    "source": "BOW Website - Image Selection v1 - Review Pack/F_KPA renders - rights to confirm/F05_42-50-La-Trobe-St,-Melbourne_KPA-022.jpg",
+    "sha256": "a2d1e4d74fad8fba4e1fd9cd4b2abf9f9ee5941a46fa002abe939adcb3a729e7",
+    "rights": "KPA: rights explicitly to confirm; excluded from website output",
+    "used": false,
+    "outputs": [],
+    "original_dimensions": [
+      1053,
+      634
+    ],
+    "used_on": []
+  },
+  {
+    "id": "F06",
+    "source": "BOW Website - Image Selection v1 - Review Pack/F_KPA renders - rights to confirm/F06_West-Gate-Freeway-Bridge-Removal_KPA-059.jpg",
+    "sha256": "89b2d93eb01843c06e16c0b66675acb111d43d2a866b6e13ce093269f0504dd6",
+    "rights": "KPA: rights explicitly to confirm; excluded from website output",
+    "used": false,
+    "outputs": [],
+    "original_dimensions": [
+      742,
+      557
+    ],
+    "used_on": []
+  }
+]

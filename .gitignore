@@ -6,3 +6,7 @@ output/
 !.env.example
 .wrangler/
 .openai/
+
+.local/
+.dev.vars
+__pycache__/

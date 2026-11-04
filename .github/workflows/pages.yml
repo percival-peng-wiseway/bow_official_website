@@ -35,6 +35,10 @@ jobs:
         run: npm run build
       - name: Check JavaScript
         run: npm run check
+      - name: Test contact handling and project filters
+        run: npm test
+      - name: Audit generated links and assets
+        run: npm run audit
       - name: Upload website
         uses: actions/upload-pages-artifact@v4
         with:

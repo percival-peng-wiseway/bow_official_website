@@ -4,7 +4,9 @@
   "type": "module",
   "scripts": {
     "build": "node build.mjs",
-    "check": "node --check build.mjs && node --check content.mjs && node --check dist/app.js",
-    "preview": "python3 -m http.server 4174 --directory dist --bind 127.0.0.1"
+    "check": "node --check build.mjs && node --check content.mjs && node --check dist/app.js && node --check dist/site-model.js && node --check backend/contact-worker.mjs && node --check scripts/preview.mjs",
+    "preview": "node scripts/preview.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "audit": "python3 scripts/audit-site.py"
   }
 }

@@ -1,0 +1,19 @@
+name = "bow-website-enquiries"
+main = "contact-worker.mjs"
+compatibility_date = "2026-11-04"
+
+[vars]
+# Use exact approved website origins, comma separated. Confirm these before deploying.
+ALLOWED_ORIGINS = "https://percival-peng-wiseway.github.io"
+# CONTACT_FROM must be set to an address on a Resend-verified sending domain.
+# RESEND_API_KEY must be provisioned as a Worker secret, not a public build variable.
+
+[[ratelimits]]
+name = "CONTACT_RATE_LIMITER"
+namespace_id = "104601"
+simple = { limit = 5, period = 60 }
+
+[[ratelimits]]
+name = "GLOBAL_RATE_LIMITER"
+namespace_id = "104602"
+simple = { limit = 30, period = 60 }
