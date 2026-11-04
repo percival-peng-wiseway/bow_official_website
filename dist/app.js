@@ -1,4 +1,5 @@
 import {readFilters,matchesProject,filterQuery} from './site-model.js';
+import {createHeroRotation} from './hero-rotation.js';
 const config=JSON.parse(document.getElementById('site-config').textContent);
 const reduced=matchMedia('(prefers-reduced-motion: reduce)');
 const menu=document.getElementById('main-navigation'),menuButton=document.querySelector('.menu-toggle'),menuDialog=document.getElementById('menu-dialog');
@@ -17,11 +18,23 @@ menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>setMenu(fal
 const video=document.getElementById('hero-video'),poster=document.getElementById('hero-poster');
 if(video){
  const buttons=[...document.querySelectorAll('[data-scene]')],playback=document.getElementById('hero-playback'),place=document.getElementById('hero-location');
- let selected=config.heroScenes[0],generation=0,userPaused=false;
+ let selected=config.heroScenes[0],generation=0,userPaused=false,heroVisible=true;
  const canAnimate=()=>!reduced.matches&&!navigator.connection?.saveData;
- function stopVideo(){generation++;video.pause();video.hidden=true;video.removeAttribute('src');video.load();playback.hidden=true;}
+ const rotation=createHeroRotation({scenes:config.heroScenes,initialId:selected.id,onAdvance:id=>setScene(id)});
+ const icons={pause:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14M16 5v14" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>',play:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 5 11 7-11 7Z" fill="currentColor"/></svg>'};
+ function syncPlayback(){
+  const active=!userPaused&&!document.hidden&&!reduced.matches&&heroVisible&&!menuDialog.open;
+  rotation.setRunning(active);
+  place.setAttribute('aria-live',active&&rotation.canRotate?'off':'polite');
+  playback.hidden=reduced.matches||(!rotation.canRotate&&!selected.video&&!selected.mobileVideo);
+  const label=userPaused?'Play slideshow':'Pause slideshow';
+  playback.innerHTML=userPaused?icons.play:icons.pause;playback.setAttribute('aria-label',label);playback.title=label;
+  if(!active||!canAnimate())video.pause();
+  else if(video.getAttribute('src')&&video.paused)video.play().catch(()=>{});
+ }
+ function stopVideo(){generation++;video.pause();video.hidden=true;video.removeAttribute('src');video.load();}
  async function setScene(id){
-  const scene=config.heroScenes.find(s=>s.id===id);if(!scene)return;selected=scene;userPaused=false;stopVideo();
+  const scene=config.heroScenes.find(s=>s.id===id);if(!scene)return;selected=scene;stopVideo();
   buttons.forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.scene===id)));
   buttons[0].parentElement.style.setProperty('--active-index',buttons.findIndex(b=>b.dataset.scene===id));
   place.textContent=scene.place===scene.label?scene.label:scene.place+', '+scene.label;
@@ -29,15 +42,19 @@ if(video){
   if(scene.poster){poster.src=scene.poster;poster.alt=scene.id==='VIC'?'The International, Brighton, Victoria':scene.id==='QLD'?'Mt Miller BESS site plan, Central Queensland':scene.label;}
   else{poster.removeAttribute('src');poster.alt='';}
   const source=matchMedia('(max-width:760px)').matches&&scene.mobileVideo?scene.mobileVideo:scene.video;
-  if(!source||!canAnimate())return;
-  const token=generation;video.src=source;video.loop=config.heroScenes.filter(s=>s.video).length<=1;video.preload='metadata';
-  try{await video.play();if(token!==generation)return;video.hidden=false;playback.hidden=false;playback.textContent='Pause video';playback.setAttribute('aria-label','Pause background video');}catch{if(token===generation){video.hidden=true;playback.hidden=true;}}
+  syncPlayback();
+  if(!source||!canAnimate()||userPaused||document.hidden||!heroVisible||menuDialog.open)return;
+  const token=generation;video.src=source;video.loop=true;video.preload='metadata';
+  try{await video.play();if(token!==generation)return;video.hidden=false;if(userPaused||document.hidden||!heroVisible||menuDialog.open)video.pause();}catch{if(token===generation)video.hidden=true;}
  }
- buttons.forEach((b,i)=>{b.addEventListener('click',()=>setScene(b.dataset.scene));b.addEventListener('keydown',event=>{const delta={ArrowLeft:-1,ArrowRight:1}[event.key];if(delta){event.preventDefault();const next=buttons[(i+delta+buttons.length)%buttons.length];next.focus();setScene(next.dataset.scene);}});});
- playback.addEventListener('click',async()=>{userPaused=!video.paused;if(userPaused)video.pause();else{try{await video.play();}catch{return;}}playback.textContent=userPaused?'Play video':'Pause video';playback.setAttribute('aria-label',userPaused?'Play background video':'Pause background video');});
- video.addEventListener('error',()=>{video.hidden=true;playback.hidden=true;});
- video.addEventListener('ended',()=>{const available=config.heroScenes.filter(s=>s.video);if(available.length>1&&!userPaused)setScene(available[(available.findIndex(s=>s.id===selected.id)+1)%available.length].id);});
- document.addEventListener('visibilitychange',()=>{if(document.hidden)video.pause();else if(video.src&&!userPaused&&canAnimate())video.play().catch(()=>{});});
+ function selectScene(id){rotation.select(id);setScene(id);}
+ buttons.forEach((b,i)=>{b.addEventListener('click',()=>selectScene(b.dataset.scene));b.addEventListener('keydown',event=>{const delta={ArrowLeft:-1,ArrowRight:1}[event.key];if(delta){event.preventDefault();const next=buttons[(i+delta+buttons.length)%buttons.length];next.focus();selectScene(next.dataset.scene);}});});
+ playback.addEventListener('click',()=>{userPaused=!userPaused;syncPlayback();if(!userPaused&&!video.getAttribute('src')&&(selected.video||selected.mobileVideo))setScene(selected.id);});
+ video.addEventListener('error',()=>{video.hidden=true;});
+ poster.addEventListener('load',()=>{if(canAnimate())poster.animate([{opacity:.5},{opacity:1}],{duration:400,easing:'ease-out'});});
+ document.addEventListener('visibilitychange',syncPlayback);
+ menuButton.addEventListener('click',syncPlayback);menuDialog.addEventListener('close',syncPlayback);
+ new IntersectionObserver(([entry])=>{heroVisible=entry.isIntersecting;syncPlayback();},{threshold:0}).observe(video.closest('.home-hero'));
  reduced.addEventListener('change',()=>setScene(selected.id));
  setScene(selected.id);
 }

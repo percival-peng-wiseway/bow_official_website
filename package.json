@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "build": "node build.mjs",
-    "check": "node --check build.mjs && node --check content.mjs && node --check dist/app.js && node --check dist/site-model.js && node --check backend/contact-worker.mjs && node --check scripts/preview.mjs",
+    "check": "node --check build.mjs && node --check content.mjs && node --check dist/app.js && node --check dist/site-model.js && node --check dist/hero-rotation.js && node --check backend/contact-worker.mjs && node --check scripts/preview.mjs",
     "preview": "node scripts/preview.mjs",
     "test": "node --test tests/*.test.mjs",
     "audit": "python3 scripts/audit-site.py"

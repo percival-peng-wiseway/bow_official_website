@@ -73,3 +73,7 @@ The linked public GitHub Pages homepage HTML and stylesheet were downloaded and 
 ## Latest requested UI
 
 The contact-page email is enlarged and LinkedIn uses an accessible icon button. The homepage state selector uses a borderless frosted capsule and sliding gold highlight with reduced-motion support. All are included in this original-baseline revision. The local 49-row requirement register includes these requests and the Page Notes removal.
+
+## Homepage rotation
+
+The homepage advances every two seconds through states with supplied posters or videos. States without media remain manually selectable. Manual selection resets the two-second timer. The pause/play icon controls rotation and video playback; rotation pauses while the page is hidden, the hero is outside the viewport, or the menu is open. Reduced-motion preferences disable automatic rotation.

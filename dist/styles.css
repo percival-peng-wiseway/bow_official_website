@@ -418,3 +418,8 @@ html.page-enter main{animation:page-content-enter .18s ease both;}
  .site-footer .licences-compact h3{font-size:17px;}
 }
 @media(prefers-reduced-motion:reduce){.site-footer .footer-linkedin,.site-footer .footer-grid>div>a{transition:none;}}
+
+.hero-controls .playback{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;min-height:44px;padding:0;flex-shrink:0;border:0;border-radius:50%;background:#24242480;color:#f4f3ef;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);}
+.hero-controls .playback svg{width:18px;height:18px;}
+.hero-controls .playback:hover{background:#ffffff26;}
+@media(max-width:600px){.hero-controls>p{width:auto;flex:1;}.hero-controls .playback{margin-left:auto;}}
