@@ -481,3 +481,6 @@ main .licences p{font-size:var(--module-copy);line-height:1.7;}
  .info-card-grid,.values-grid.info-card-grid{--info-columns:1;}
  .info-card-grid .info-card-heading{min-height:0;}
 }
+
+.module-actions{display:flex;justify-content:flex-end;margin-top:24px;}
+@media(max-width:700px){.module-actions{justify-content:flex-start;}}
