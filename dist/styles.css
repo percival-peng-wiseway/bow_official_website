@@ -373,3 +373,11 @@ html.page-enter main{animation:page-content-enter .18s ease both;}
  .service-tile p{margin-top:10px;}
 }
 @media(prefers-reduced-motion:reduce){.service-tile h3,.service-tile h3 svg{transition:none;}}
+
+/* Keep the contact call to action beside its heading on wide screens. */
+.contact-band>.contact-band-row{display:flex;align-items:center;justify-content:space-between;gap:40px;}
+.contact-band-row>h2{min-width:0;margin:0;line-height:1.15;}
+.contact-band-row>.button{flex-shrink:0;margin:0;}
+@media(max-width:700px){
+ .contact-band>.contact-band-row{flex-direction:column;align-items:flex-start;gap:24px;}
+}
