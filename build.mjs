@@ -1,6 +1,6 @@
 import {mkdir,readFile,writeFile,rm} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
-import {company,services,projects,people,heroScenes,featuredProjects,homePeople} from './content.mjs';
+import {company,services,projects,people,heroScenes} from './content.mjs';
 const origin=(process.env.SITE_ORIGIN||'http://127.0.0.1:4174').replace(/\/+$/,'');
 const base=(process.env.BASE_PATH||'').replace(/^\/+|\/+$/g,'');
 const prefix=base?'/'+base:'';
@@ -46,7 +46,6 @@ function personCard(p,compact=false){
  return `<article class="person-card" id="${p.id}" data-group="${p.group}">${compact?`<a class="person-card-link" href="${url('/people/#'+p.id)}" aria-label="Meet ${esc(p.name)}">${portrait}${details}</a>`:`${portrait}${details}<p class="person-bio">${esc(p.bio)}</p>`}</article>`;
 }
 const contactStrip=()=>`<section class="contact-band"><div class="container contact-band-row"><h2>Get In Touch</h2>${link('/contact/','Contact','button button-gold')}</div></section>`;
-function serviceTile(s){return `<article class="service-tile"><a href="${url('/services/'+s.id+'/')}"><div class="service-tile-image">${s.image?image(s.image,s.name,{sizes:'(max-width: 700px) 100vw, 50vw'}):`<div class="modular-grid" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>`}</div><div class="service-tile-copy"><h3>${esc(s.name)}${arrow}</h3><p>${esc(s.summary)}</p></div></a></article>`;}
 // Shared content-module and text-card templates keep section alignment consistent.
 function sectionTitle(title,action='',extraClass='',id=''){
  return `<div class="section-title${extraClass?' '+extraClass:''}"${id?` id="${esc(id)}"`: ''}><h2>${esc(title)}</h2>${action}</div>`;
@@ -59,9 +58,6 @@ function infoCard(title,text,index){
 }
 function home(){
  return `${header()}<main id="main"><section class="home-hero" aria-label="BOW across Australia"><div class="hero-frame"><div class="hero-background"><img id="hero-poster" src="${url('/assets/review-B07.webp')}" srcset="${url('/assets/review-B07-600.webp')} 600w, ${url('/assets/review-B07.webp')} 1600w" sizes="100vw" alt="The International, Brighton, Victoria" fetchpriority="high" decoding="async"><video id="hero-video" muted loop playsinline preload="none" hidden aria-hidden="true"></video></div><div class="hero-shade"></div><div class="hero-copy"><h1>${esc(company.tagline)}</h1></div><div class="hero-controls"><div class="state-switcher" role="group" aria-label="Choose a state">${heroScenes.map((s,i)=>`<button data-scene="${s.id}" aria-label="${s.label}" aria-pressed="${i===0}">${s.id}</button>`).join('')}</div><p id="hero-location" aria-live="polite">Melbourne, Victoria</p><button id="hero-playback" class="playback" hidden aria-label="Pause slideshow">Pause slideshow</button></div></div></section>
- ${moduleSection('',`<div class="service-grid">${services.map(serviceTile).join('')}</div>`,{className:'expertise-section',id:'services',label:'Services'})}
- ${moduleSection('',`<div class="project-grid home-projects">${featuredProjects.map(id=>projectCard(byProject(id))).join('')}</div>`,{className:'impact-section',label:'Featured projects',action:link('/projects/','Explore our projects.')})}
- ${moduleSection('',`<div class="people-grid compact-people">${homePeople.map(id=>personCard(people.find(p=>p.id===id),true)).join('')}</div>`,{className:'people-section',label:'Leadership team',action:link('/people/','Meet our people.')})}
  ${contactStrip()}</main>${footer()}`;
 }
 function about(){
