@@ -1,4 +1,4 @@
-export const HERO_ROTATION_MS=2000;
+export const HERO_ROTATION_MS=5000;
 
 // States without supplied media remain manually selectable, but never create empty automatic slides.
 export function createHeroRotation({scenes,initialId,onAdvance,setTimer=setTimeout,clearTimer=clearTimeout}){

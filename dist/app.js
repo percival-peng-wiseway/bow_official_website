@@ -82,6 +82,40 @@ window.addEventListener('hashchange',updateNavigationCurrent);
 window.addEventListener('popstate',updateNavigationCurrent);
 updateNavigationCurrent();
 
+// State-level coverage pins and the equivalent region list share one selection.
+const reach=document.querySelector('[data-reach]');
+if(reach){
+ const controls=[...reach.querySelectorAll('[data-reach-region]')],shapes=[...reach.querySelectorAll('[data-reach-shape]')];
+ const details=[...reach.querySelectorAll('[data-reach-details]')];
+ let selected=controls.find(button=>button.getAttribute('aria-pressed')==='true')?.dataset.reachRegion;
+ let expanded=details.find(panel=>!panel.hidden)?.dataset.reachDetails||null;
+ function highlight(code){
+  shapes.forEach(shape=>shape.classList.toggle('is-highlighted',shape.dataset.reachShape===code));
+  controls.forEach(button=>button.classList.toggle('is-highlighted',button.dataset.reachRegion===code));
+ }
+ controls.forEach(button=>{
+  button.addEventListener('click',()=>{
+   const code=button.dataset.reachRegion,hasDetails=details.some(panel=>panel.dataset.reachDetails===code);
+   expanded=hasDetails&&!(button.classList.contains('reach-region')&&expanded===code)?code:null;
+   selected=code;
+   controls.forEach(control=>control.setAttribute('aria-pressed',String(control.dataset.reachRegion===selected)));
+   details.forEach(panel=>{
+    const open=panel.dataset.reachDetails===expanded;
+    panel.hidden=!open;
+    document.getElementById('reach-region-'+panel.dataset.reachDetails).setAttribute('aria-expanded',String(open));
+   });
+   const label=reach.querySelector('.reach-region[data-reach-region="'+selected+'"]>span:nth-child(2)').textContent;
+   reach.querySelector('[data-reach-status]').textContent='Business coverage: '+label+'.';
+   highlight(selected);
+  });
+  button.addEventListener('pointerenter',()=>highlight(button.dataset.reachRegion));
+  button.addEventListener('pointerleave',()=>highlight(selected));
+  button.addEventListener('focus',()=>highlight(button.dataset.reachRegion));
+  button.addEventListener('blur',()=>highlight(selected));
+ });
+ highlight(selected);
+}
+
 // Only the selected state's clip is loaded. Missing footage never reuses a different state's photograph.
 const video=document.getElementById('hero-video'),poster=document.getElementById('hero-poster');
 if(video){
@@ -107,7 +141,7 @@ if(video){
   buttons[0].parentElement.style.setProperty('--active-index',buttons.findIndex(b=>b.dataset.scene===id));
   place.textContent=scene.place===scene.label?scene.label:scene.place+', '+scene.label;
   poster.hidden=!scene.poster;poster.removeAttribute('srcset');
-  if(scene.poster){poster.src=scene.poster;poster.alt=scene.id==='VIC'?'The International, Brighton, Victoria':scene.id==='QLD'?'Mt Miller BESS site plan, Central Queensland':scene.label;}
+  if(scene.poster){poster.src=scene.poster;poster.alt=scene.alt||scene.label;}
   else{poster.removeAttribute('src');poster.alt='';}
   const source=matchMedia('(max-width:760px)').matches&&scene.mobileVideo?scene.mobileVideo:scene.video;
   syncPlayback();

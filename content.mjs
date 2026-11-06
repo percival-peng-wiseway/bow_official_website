@@ -17,6 +17,7 @@ export const company = {
   "abn": "43 669 580 401",
   "phone": "",
   "linkedin": "https://au.linkedin.com/company/bow-projects-australia",
+  "instagram": "https://www.instagram.com/bowprojectsaustralia/",
   "divisions": [
     {
       "name": "BOW Projects Victoria",
@@ -1010,7 +1011,7 @@ export const people = [
     "role": "Director",
     "group": "leadership",
     "image": "jason-ohara",
-    "bio": "Jason brings a 38-year construction career spanning major stadium, retail, high-rise and mixed-use developments. His experience combines end-to-end project leadership with commercial and domestic building expertise."
+    "bio": "Jason brings a 41-year construction career spanning major stadium, retail, high-rise and mixed-use developments. His experience combines end-to-end project leadership with commercial and domestic building expertise."
   },
   {
     "id": "joe-brinzi",
@@ -1018,7 +1019,7 @@ export const people = [
     "role": "Director",
     "group": "leadership",
     "image": "joe-brinzi",
-    "bio": "Joe has 36 years of experience coordinating and delivering award-winning residential and commercial projects. His background includes workplace health and safety leadership and bushfire recovery work for the Victorian Government after the 2019 fires."
+    "bio": "Joe has 39 years of experience coordinating and delivering award-winning residential and commercial projects. His background includes workplace health and safety leadership and bushfire recovery work for the Victorian Government after the 2019 fires."
   },
   {
     "id": "steve-wang",
@@ -1034,7 +1035,7 @@ export const people = [
     "role": "Director - Structure",
     "group": "leadership",
     "image": "hassan-kassem",
-    "bio": "Hassan brings more than 25 years of residential, commercial and mixed-use construction experience and heads BOW Structures. His focus is early contractor involvement, structural optimisation, safe delivery and practical client outcomes."
+    "bio": "Hassan brings more than 28 years of residential, commercial and mixed-use construction experience and heads BOW Structures. His focus is early contractor involvement, structural optimisation, safe delivery and practical client outcomes."
   },
   {
     "id": "nidhi-pandey",
@@ -1067,7 +1068,8 @@ export const heroScenes = [
     "id": "VIC",
     "label": "Victoria",
     "place": "Melbourne",
-    "poster": "review-B07",
+    "poster": "hero-vic-original.jpg",
+    "alt": "The International, Brighton, Victoria",
     "video": "",
     "mobileVideo": ""
   },
@@ -1075,7 +1077,8 @@ export const heroScenes = [
     "id": "QLD",
     "label": "Queensland",
     "place": "Central Queensland",
-    "poster": "mt-miller",
+    "poster": "hero-qld-bess.png",
+    "alt": "Battery energy storage project, Queensland",
     "video": "",
     "mobileVideo": ""
   },
