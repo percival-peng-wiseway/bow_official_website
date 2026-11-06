@@ -484,6 +484,58 @@ main .licences p{font-size:var(--module-copy);line-height:1.7;}
 .module-actions{display:flex;justify-content:flex-end;margin-top:24px;}
 @media(max-width:700px){.module-actions{justify-content:flex-start;}}
 
+/* Service editorial layout follows the same reading width and typography as About. */
+.service-copy{max-width:1100px;display:flex;flex-direction:column;gap:28px;}
+.service-copy p{font-family:var(--sans);font-size:22px;font-weight:400;line-height:1.7;letter-spacing:-.015em;margin:0;color:#deddd6;}
+.service-capabilities{margin-top:64px;}
+.service-capabilities>h3{font-size:32px;line-height:1.2;letter-spacing:-.03em;font-weight:500;margin:0 0 28px;}
+.service-capability-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:48px;list-style:none;padding:0;margin:0;}
+.service-capability-list>li{border-top:1px solid #ffffff26;padding:22px 0 26px;font-size:22px;line-height:1.45;letter-spacing:-.015em;color:#e1dfd8;}
+.service-capabilities>.text-link{margin-top:24px;font-size:18px;}
+.service-overview>.review-gallery{margin-top:64px;}
+@media(max-width:700px){
+ .service-copy{gap:24px;}
+ .service-copy p{font-size:20px;}
+ .service-capabilities{margin-top:44px;}
+ .service-capabilities>h3{font-size:28px;margin-bottom:24px;}
+ .service-capability-list{grid-template-columns:1fr;}
+ .service-capability-list>li{font-size:20px;padding:20px 0;}
+ .service-overview>.review-gallery{margin-top:44px;}
+}
+
+/* Enquiry fields have clear boundaries, generous type and a shared focus treatment. */
+.contact-grid{align-items:start;}
+#enquiry-form{display:grid;gap:26px;padding:40px;background:#292928;border:1px solid #ffffff0c;border-radius:12px;}
+#enquiry-form h2{font-size:34px;line-height:1.18;letter-spacing:-.035em;margin:0;}
+#enquiry-form .form-mode{font-size:14px!important;line-height:1.6;margin:0;padding:12px 16px;border-left:2px solid var(--gold);background:#d4b16b0a;color:#dfcca5!important;}
+#enquiry-form .form-mode:empty{display:none;}
+#enquiry-form .form-row{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;}
+#enquiry-form label{min-width:0;margin:0;font-size:17px;font-weight:400;line-height:1.5;color:#e8e6df;}
+#enquiry-form label>span{color:var(--gold);}
+#enquiry-form input,#enquiry-form select,#enquiry-form textarea{margin-top:10px;width:100%;min-height:56px;padding:14px 16px;border:1px solid #ffffff29;border-radius:7px;background:#20201f;color:#f2f0e9;font-family:var(--sans);font-size:18px;line-height:1.5;letter-spacing:0;transition:border-color .18s,box-shadow .18s,background .18s;}
+#enquiry-form select{height:56px;padding-block:12px;}
+#enquiry-form textarea{min-height:160px;resize:vertical;}
+#enquiry-form textarea::placeholder,#enquiry-form input::placeholder{font:inherit;color:#9b9991;opacity:1;}
+#enquiry-form input:hover,#enquiry-form select:hover,#enquiry-form textarea:hover{border-color:#ffffff48;}
+#enquiry-form input:focus,#enquiry-form select:focus,#enquiry-form textarea:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px #d4b16b17;background:#232321;}
+#enquiry-form .privacy-note{font-size:14px!important;line-height:1.65;color:#bcbab2;margin:0;}
+#enquiry-form .privacy-note .text-link{font-size:14px;line-height:1.65;color:#e3dfd2;margin-left:6px;}
+#enquiry-form .privacy-note svg{width:14px;height:14px;}
+#enquiry-form .button{min-height:58px;padding:16px 22px;gap:24px;font-size:18px;font-weight:500;line-height:1.4;border-radius:7px;}
+#enquiry-form .button:hover:not(:disabled){background:var(--gold-light);}
+#enquiry-form .button:disabled{opacity:.55;}
+#enquiry-form .button:focus-visible{outline-color:var(--gold-light);outline-offset:4px;}
+#enquiry-result{margin:0;border-radius:7px;font-size:16px;}
+@media(max-width:600px){
+ #enquiry-form{padding:26px 22px;gap:24px;border-radius:9px;}
+ #enquiry-form h2{font-size:28px;}
+ #enquiry-form .form-row{grid-template-columns:1fr;gap:24px;}
+ #enquiry-form label{font-size:16px;}
+ #enquiry-form .form-mode{padding:10px 12px;}
+ #enquiry-form input,#enquiry-form select,#enquiry-form textarea{font-size:18px;}
+}
+@media(prefers-reduced-motion:reduce){#enquiry-form input,#enquiry-form select,#enquiry-form textarea{transition:none;}}
+
 /* The brand is Home; desktop titles disclose quick links, mobile uses accordions. */
 .desktop-navigation{display:none;}
 .desktop-nav-item{position:relative;display:flex;align-items:center;height:100%;flex-shrink:0;}

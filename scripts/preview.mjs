@@ -16,7 +16,7 @@ const server=http.createServer(async(req,res)=>{
    const request=new Request(origins[0]+pathname,init);
    const result=await handleContact(request,{ALLOWED_ORIGINS:origins.join(',')},{local:true,deliver:async enquiry=>{
     await mkdir(outbox,{recursive:true});const path=resolve(outbox,enquiry.requestId+'.json');
-    try{await writeFile(path,JSON.stringify(enquiry,null,2)+'\n',{flag:'wx',mode:0o600});}catch(error){if(error.code!=='EEXIST')throw error;const saved=JSON.parse(await readFile(path,'utf8'));for(const k of ['firstName','lastName','email','company','service','message'])if(saved[k]!==enquiry[k])throw new Error('Request reference already used.');}
+    try{await writeFile(path,JSON.stringify(enquiry,null,2)+'\n',{flag:'wx',mode:0o600});}catch(error){if(error.code!=='EEXIST')throw error;const saved=JSON.parse(await readFile(path,'utf8'));for(const k of ['firstName','lastName','email','phone','company','service','message'])if((saved[k]??'')!==(enquiry[k]??''))throw new Error('Request reference already used.');}
    }});
    res.writeHead(result.status,Object.fromEntries(result.headers));res.end(await result.text());return;
   }

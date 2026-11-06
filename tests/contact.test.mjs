@@ -9,6 +9,19 @@ test('Local review submission records data only in the injected local outbox and
  const saved=[];const r=await handleContact(req(),{ALLOWED_ORIGINS:origin},{local:true,deliver:async p=>saved.push(p),fetch:()=>{throw new Error('External call forbidden');}});
  assert.equal(r.status,200);assert.equal((await r.json()).mode,'local');assert.equal(saved.length,1);assert.equal(saved[0].to,'info@bowprojects.com.au');
 });
+test('Phone remains optional for existing clients and preserves international formatting when supplied',async()=>{
+ for(const phone of [undefined,'','  +61 (0) 400 000 000  ']){
+  let saved;const p=payload();if(phone!==undefined)p.phone=phone;
+  const r=await handleContact(req(p),{ALLOWED_ORIGINS:origin},{local:true,deliver:async enquiry=>{saved=enquiry;}});
+  assert.equal(r.status,200);assert.equal(saved.phone,(phone||'').trim());
+ }
+});
+test('Invalid optional phone values are rejected before delivery',async()=>{
+ for(const phone of [1234,'1'.repeat(51),'123\nInjected: value']){
+  let called=false;const r=await handleContact(req({...payload(),phone}),env(),{fetch:async()=>{called=true;return Response.json({id:'receipt'});}});
+  assert.equal(r.status,400);assert.equal(called,false);
+ }
+});
 test('Unapproved origins cannot invoke the provider and preflight is limited to approved sites',async()=>{
  let called=false;const r=await handleContact(req(payload(),{headers:{Origin:'https://evil.test'}}),env(),{fetch:()=>{called=true;}});assert.equal(r.status,403);assert.equal(called,false);assert.equal(r.headers.get('Access-Control-Allow-Origin'),null);
  const pre=await handleContact(new Request('https://forms.test/',{method:'OPTIONS',headers:{Origin:origin}}),env());assert.equal(pre.status,204);assert.equal(pre.headers.get('Access-Control-Allow-Origin'),origin);
@@ -17,10 +30,11 @@ test('Production refuses unconfigured mail service rather than displaying a fals
  const r=await handleContact(req(),{ALLOWED_ORIGINS:origin});assert.equal(r.status,503);assert.equal((await r.json()).ok,false);
 });
 test('Provider request pins the recipient and uses the visitor as Reply-To with a stable idempotency key',async()=>{
- const p=payload();let call;
+ const p={...payload(),phone:'+61 400 000 000'};let call;
  const r=await handleContact(req({...p,to:'attacker@example.test'}),env(),{fetch:async(url,options)=>{call={url,...options};return Response.json({id:'provider-receipt'});}});
  assert.equal(r.status,200);assert.equal((await r.json()).mode,'hosted');
  const sent=JSON.parse(call.body);assert.deepEqual(sent.to,['info@bowprojects.com.au']);assert.equal(sent.reply_to,p.email);assert.equal(call.headers['Idempotency-Key'],'bow-enquiry/'+p.requestId);assert(!Object.hasOwn(sent,'html'));
+ assert(sent.text.includes('Phone: '+p.phone));
 });
 test('Provider errors, invalid receipts and network failure never return success',async()=>{
  for(const provider of [async()=>Response.json({error:'bad'},{status:500}),async()=>Response.json({}),async()=>{throw new Error('offline');}]){const r=await handleContact(req(),env(),{fetch:provider});assert.equal(r.status,502);assert.equal((await r.json()).ok,false);}

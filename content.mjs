@@ -88,7 +88,7 @@ export const services = [
     "caption": "Commercial · Residential · Mixed-use",
     "intro": "Places that work. Partnerships that last.",
     "summary": "Commercial, residential and mixed-use buildings, delivered as head contractor or under early contractor involvement.",
-    "description": "We build commercial, residential and mixed-use projects as head contractor, and we are just as comfortable on the client's side of the table. Our early contractor involvement work starts before the design is frozen: staging, methodology, buildability, procurement strategy and a cost plan the client can rely on. When the project is ready, we either deliver it or hand the client a package another builder can price. Construction management is the third model, where BOW runs the site and the trades on the principal's behalf without taking the head contract risk. Current examples: the Museum of Chinese Australian History redevelopment, Cassells House in Elizabeth Street, and Box Hill Childcare, delivered under an AS 4000 head contract and handed over in July 2026.",
+    "description": "We build commercial, residential and mixed-use projects as head contractor, and we are just as comfortable on the client's side of the table.\n\nOur early contractor involvement work starts before the design is frozen: staging, methodology, buildability, procurement strategy and a cost plan the client can rely on. When the project is ready, we either deliver it or hand the client a package another builder can price. Construction management is the third model, where BOW runs the site and the trades on the principal's behalf without taking the head contract risk.\n\nCurrent examples: the Museum of Chinese Australian History redevelopment, Cassells House in Elizabeth Street, and Box Hill Childcare, delivered under an AS 4000 head contract and handed over in July 2026.",
     "scope": [
       "Early contractor involvement",
       "Construction management",
@@ -118,7 +118,7 @@ export const services = [
     "caption": "The BOW Structures division",
     "intro": "Strong foundations. Stronger partnerships.",
     "summary": "Our own structures division: groundworks, basements, retention, formwork, post-tensioning and precast.",
-    "description": "BOW Structures is our own division, not a subcontractor. It takes a building from the first retention pile to the last precast panel: structural design and rationalisation, formwork and temporary works design and certification, earthmoving, basement construction, retention systems, reinforcement, post-tensioning, concrete placement and precast installation. Doing this in-house gives us control of the critical path and a straight answer when something in the ground is not what the geotechnical report promised. The team's track record includes double and quadruple basements, post-tensioned transfer slabs, stadium and hospital temporary works, and the strengthening of existing buildings for extension.",
+    "description": "BOW Structures is our own division, not a subcontractor. It takes a building from the first retention pile to the last precast panel: structural design and rationalisation, formwork and temporary works design and certification, earthmoving, basement construction, retention systems, reinforcement, post-tensioning, concrete placement and precast installation.\n\nDoing this in-house gives us control of the critical path and a straight answer when something in the ground is not what the geotechnical report promised.\n\nThe team's track record includes double and quadruple basements, post-tensioned transfer slabs, stadium and hospital temporary works, and the strengthening of existing buildings for extension.",
     "scope": [
       "Structural design and rationalisation",
       "Formwork and temporary works design and certification",
@@ -154,7 +154,7 @@ export const services = [
     "caption": "Civic · Health · Transport · Sport",
     "intro": "Built for the people who depend on it.",
     "summary": "Stadiums, hospitals, transport and civic buildings, with the structural depth they demand.",
-    "description": "Public buildings are judged for a long time after the ribbon is cut, so we build them to be judged. Our people have delivered and engineered work at the MCG, AAMI Park, Rod Laver Arena, Melbourne Airport, the New Footscray Hospital and the Metro Tunnel. BOW brings that structural depth, together with early contractor involvement and construction management, to civic, health, education, transport and sporting projects, and we are active in the Queensland pipeline ahead of the 2032 Games.",
+    "description": "Public buildings are judged for a long time after the ribbon is cut, so we build them to be judged.\n\nOur people have delivered and engineered work at the MCG, AAMI Park, Rod Laver Arena, Melbourne Airport, the New Footscray Hospital and the Metro Tunnel.\n\nBOW brings that structural depth, together with early contractor involvement and construction management, to civic, health, education, transport and sporting projects, and we are active in the Queensland pipeline ahead of the 2032 Games.",
     "scope": [
       "Civic and community buildings",
       "Health and education facilities",
@@ -183,7 +183,7 @@ export const services = [
     "caption": "A considered approach to building",
     "intro": "Thinking differently about how we build.",
     "summary": "Volumetric modular delivery with our steel and modular partner, designed in from the permit stage.",
-    "description": "Modular only works when it is designed in from the start. BOW's approach is to run the modular strategy in parallel with the planning process, so the module grid, the transport envelope and the compliance pathway are settled before the permit drawings are. We deliver volumetric modular buildings with our steel and modular partner, with design freeze hold points, a clear split between modular and in-situ work, and a programme that is usually months shorter than the conventional alternative. Current work includes residential towers in Brisbane and a build-to-rent development in South Melbourne.",
+    "description": "Modular only works when it is designed in from the start. BOW's approach is to run the modular strategy in parallel with the planning process, so the module grid, the transport envelope and the compliance pathway are settled before the permit drawings are.\n\nWe deliver volumetric modular buildings with our steel and modular partner, with design freeze hold points, a clear split between modular and in-situ work, and a programme that is usually months shorter than the conventional alternative.\n\nCurrent work includes residential towers in Brisbane and a build-to-rent development in South Melbourne.",
     "scope": [
       "Volumetric modular strategy alongside planning",
       "Design for manufacture and assembly (DfMA)",
@@ -208,7 +208,7 @@ export const services = [
     "caption": "Battery storage · Energy transition",
     "intro": "Infrastructure for what comes next.",
     "summary": "Battery energy storage project development in Queensland.",
-    "description": "BOW's Queensland team is developing grid-scale battery energy storage in Central Queensland, from site identification and approvals through to construction and delivery coordination. Our two current projects are the Mt Miller BESS and the Gladstone BESS at the Port of Gladstone. Both support grid stability and peak demand in a region that is rebuilding itself around clean energy, and both draw on the same discipline we bring to a building site: get the ground, the approvals and the programme right before anything is poured.",
+    "description": "BOW's Queensland team is developing grid-scale battery energy storage in Central Queensland, from site identification and approvals through to construction and delivery coordination.\n\nOur two current projects are the Mt Miller BESS and the Gladstone BESS at the Port of Gladstone.\n\nBoth support grid stability and peak demand in a region that is rebuilding itself around clean energy, and both draw on the same discipline we bring to a building site: get the ground, the approvals and the programme right before anything is poured.",
     "scope": [
       "Site identification and approvals",
       "Grid-scale battery energy storage development",

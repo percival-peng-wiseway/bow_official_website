@@ -4,8 +4,8 @@ const MAX_BYTES=65536;
 export function validateEnquiry(raw){
  if(!raw||typeof raw!=='object'||Array.isArray(raw))throw new Error('Invalid enquiry.');
  const field=(key,limit,required=false)=>{if(typeof raw[key]!=='string'&&(required||raw[key]!=null))throw new Error('Check the '+key+' field.');const value=(raw[key]||'').trim();if((required&&!value)||value.length>limit)throw new Error('Check the '+key+' field.');return value;};
- const result={firstName:field('firstName',80,true),lastName:field('lastName',80,true),email:field('email',200,true),company:field('company',150),service:field('service',30,true),message:field('message',6000,true),website:field('website',200)};
- if(!/^[^\s@<>]+@[^\s@<>]+\.[^\s@<>]+$/.test(result.email)||/[\r\n]/.test(result.firstName+result.lastName+result.company))throw new Error('Check your contact details.');
+ const result={firstName:field('firstName',80,true),lastName:field('lastName',80,true),email:field('email',200,true),phone:field('phone',50),company:field('company',150),service:field('service',30,true),message:field('message',6000,true),website:field('website',200)};
+ if(!/^[^\s@<>]+@[^\s@<>]+\.[^\s@<>]+$/.test(result.email)||/[\r\n]/.test(result.firstName+result.lastName+result.phone+result.company))throw new Error('Check your contact details.');
  if(!services.has(result.service))throw new Error('Choose a valid service.');
  if(!/^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(raw.requestId||''))throw new Error('Reload the form and try again.');
  return {...result,requestId:raw.requestId.toLowerCase()};
@@ -35,7 +35,7 @@ export async function handleContact(request,env={},dependencies={}){
    const [actor,global]=await Promise.all([env.CONTACT_RATE_LIMITER.limit({key:'contact:'+ip}),env.GLOBAL_RATE_LIMITER.limit({key:'contact:all'})]);
    if(!actor.success||!global.success)return respond(429,{ok:false,error:'Too many enquiries. Please wait a minute before trying again.'},{'Retry-After':'60'});
   }
-  const text=`BOW website enquiry\n\nName: ${enquiry.firstName} ${enquiry.lastName}\nEmail: ${enquiry.email}\nCompany: ${enquiry.company||'Not supplied'}\nService: ${enquiry.service}\n\n${enquiry.message}\n\nReference: ${enquiry.requestId}`;
+  const text=`BOW website enquiry\n\nName: ${enquiry.firstName} ${enquiry.lastName}\nEmail: ${enquiry.email}\nPhone: ${enquiry.phone||'Not supplied'}\nCompany: ${enquiry.company||'Not supplied'}\nService: ${enquiry.service}\n\n${enquiry.message}\n\nReference: ${enquiry.requestId}`;
   if(local){await dependencies.deliver({...enquiry,to:RECIPIENT,receivedAt:new Date().toISOString()});return respond(200,{ok:true,mode:'local',reference:enquiry.requestId});}
   const response=await (dependencies.fetch||fetch)('https://api.resend.com/emails',{method:'POST',headers:{Authorization:`Bearer ${env.RESEND_API_KEY}`,'Content-Type':'application/json','Idempotency-Key':'bow-enquiry/'+enquiry.requestId},body:JSON.stringify({from:env.CONTACT_FROM,to:[RECIPIENT],reply_to:enquiry.email,subject:'BOW website enquiry — '+enquiry.service,text}),signal:AbortSignal.timeout(12000)});
   if(!response.ok)return respond(502,{ok:false,error:'Your enquiry could not be submitted. Please try again or email info@bowprojects.com.au.'});
