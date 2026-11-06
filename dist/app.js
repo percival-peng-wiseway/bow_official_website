@@ -28,13 +28,15 @@ function setDesktopNavigation(item=null){
   toggle.setAttribute('aria-expanded',String(open));
   document.getElementById(toggle.getAttribute('aria-controls')).hidden=!open;
  });
+ document.querySelector('.nav-scrim').hidden=!item;
+ document.querySelector('.site-header').classList.toggle('navigation-open',!!item);
  if(changed)document.dispatchEvent(new Event('header-navigation-change'));
 }
 desktopItems.forEach(item=>{
  const toggle=item.querySelector('.desktop-nav-toggle');
  item.addEventListener('pointerenter',event=>{if(event.pointerType!=='touch')setDesktopNavigation(item);});
  item.addEventListener('pointerleave',()=>{
-  desktopCloseTimer=setTimeout(()=>{if(!item.contains(document.activeElement))setDesktopNavigation();},150);
+  desktopCloseTimer=setTimeout(()=>{if(!item.contains(document.activeElement))setDesktopNavigation();},240);
  });
  item.addEventListener('focusout',event=>{
   if(item.classList.contains('is-expanded')&&!item.contains(event.relatedTarget)&&!item.matches(':hover'))setDesktopNavigation();
@@ -54,6 +56,7 @@ desktopNav.addEventListener('keydown',event=>{
 });
 desktopNav.querySelectorAll('a').forEach(anchor=>anchor.addEventListener('click',()=>setDesktopNavigation()));
 document.addEventListener('pointerdown',event=>{if(!desktopNav.contains(event.target))setDesktopNavigation();});
+document.addEventListener('focusin',event=>{if(!desktopNav.contains(event.target))setDesktopNavigation();});
 document.querySelectorAll('[data-mobile-nav-toggle]').forEach(toggle=>{
  toggle.addEventListener('click',()=>{
   const open=toggle.getAttribute('aria-expanded')!=='true';
