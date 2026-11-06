@@ -25,7 +25,8 @@ const navChevron='<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path 
 function submenuLinks(section){return section.links.map(([href,label])=>`<a href="${esc(url(href))}"><span>${esc(label)}</span>${arrow}</a>`).join('');}
 function desktopPanel(section){
  const titles={about:'About BOW',services:'Our services',projects:'Our projects',people:'Our people'};
- return `<div class="desktop-submenu" id="desktop-${section.key}-links" hidden><div class="mega-inner"><div class="mega-intro"><h2>${titles[section.key]}</h2>${link(section.href,'Explore '+section.name.toLowerCase(),'mega-overview')}</div><div class="mega-links">${submenuLinks(section)}</div></div></div>`;
+ const actions={about:'Discover BOW',services:'View all services',projects:'View all projects',people:'Meet our people'};
+ return `<div class="desktop-submenu" id="desktop-${section.key}-links" hidden><div class="mega-inner"><div class="mega-intro"><h2>${titles[section.key]}</h2>${link(section.href,actions[section.key],'mega-overview')}</div><div class="mega-links">${submenuLinks(section)}</div></div></div>`;
 }
 function header(active='home'){
  const desktop=`<nav id="desktop-navigation" class="desktop-navigation" aria-label="Primary navigation">${headerSections.map(section=>`<div class="desktop-nav-item" data-desktop-nav><div class="desktop-nav-row"><a class="desktop-nav-link" href="${url(section.href)}"${section.key===active?' aria-current="page"':''}>${section.name}</a><button class="desktop-nav-toggle" aria-label="Toggle ${section.name} links" aria-controls="desktop-${section.key}-links" aria-expanded="false">${navChevron}</button></div>${desktopPanel(section)}</div>`).join('')}</nav>`;
