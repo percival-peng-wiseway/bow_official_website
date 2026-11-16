@@ -928,8 +928,7 @@ export const projects = [
     "services": [
       "infrastructure"
     ],
-    "image": "aami-park",
-    "imageCaption": "Venue photography supplied in the BOW Structures profile.",
+    "image": "aami-park-aerial",
     "headline": "Experience in landmark sporting places.",
     "summary": "A major Melbourne sporting venue featured in the team’s project experience.",
     "description": "AAMI Park is included in both supplied BOW profiles as an example of the team’s experience in major sporting infrastructure.",
