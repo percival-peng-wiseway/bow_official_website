@@ -493,11 +493,28 @@ main .licences p{font-size:var(--module-copy);line-height:1.7;}
 .hero-frame{width:100%;max-width:none;aspect-ratio:auto;height:calc(100svh - var(--site-header-height));height:calc(100dvh - var(--site-header-height));min-height:0;max-height:none;margin:0;border-radius:0;}
 .hero-background img{object-fit:cover;object-position:center;transform:none;}
 .home-hero .hero-copy{position:absolute;inset:0;height:auto;}
-.home-intro{padding-block:clamp(64px,7vw,112px);background:linear-gradient(#202020,#242423);}
-.home-intro-copy{display:grid;grid-template-columns:1fr 1.15fr;gap:8%;align-items:start;}
-.home-intro h2{font-size:clamp(30px,3vw,44px);line-height:1.2;max-width:390px;}
-.home-intro p{font-size:clamp(20px,1.6vw,24px);line-height:1.65;margin:0;color:#d5d4ce;}
-.home-explore{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;margin-top:48px;}
+.home-intro{padding-block:clamp(44px,5vw,80px);background:linear-gradient(#202020,#242423);}
+.home-stats,.home-explore{
+ display:grid;
+ grid-template-columns:repeat(3,minmax(0,1fr));
+ gap:32px;
+}
+.home-stats{margin:0;}
+.home-stats dt{
+ color:var(--gold-light);
+ font-size:clamp(2.25rem,4.6vw,4.25rem);
+ font-weight:500;
+ line-height:1.08;
+ letter-spacing:-.045em;
+}
+.home-stats dd{
+ max-inline-size:34ch;
+ margin:12px 0 0;
+ color:var(--body-copy);
+ font-size:clamp(.95rem,1.3vw,1.125rem);
+ line-height:1.6;
+}
+.home-explore{margin-top:48px;}
 .home-explore a{display:flex;align-items:center;justify-content:space-between;gap:20px;border-top:1px solid var(--line);padding-block:24px;font-size:20px;transition:color .2s,border-color .2s;}
 .home-explore a:hover{border-color:var(--gold);color:var(--gold-light);}
 .home-explore svg{width:22px;height:22px;flex-shrink:0;}
@@ -508,8 +525,11 @@ main .licences p{font-size:var(--module-copy);line-height:1.7;}
  .hero-controls .state-switcher{width:100%;}
  .hero-controls .state-switcher button{padding-inline:6px;}
  .hero-controls>p{flex:1;width:auto;}
- .home-intro-copy{grid-template-columns:1fr;gap:24px;}
- .home-explore{grid-template-columns:1fr;gap:0;margin-top:32px;}
+ .home-stats,.home-explore{grid-template-columns:1fr;}
+ .home-stats{gap:20px;}
+ .home-stats>div+div{padding-block-start:20px;border-block-start:1px solid var(--line);}
+ .home-stats dd{margin-block-start:8px;}
+ .home-explore{gap:0;margin-top:32px;}
  .home-explore a{padding-block:20px;}
 }
 
