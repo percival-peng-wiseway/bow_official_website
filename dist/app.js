@@ -163,18 +163,45 @@ if(video){
 }
 
 const projectList=document.getElementById('project-list');
+const projectBackLink=document.querySelector('.project-hero .back-link');
+if(projectBackLink){
+ const currentParams=new URLSearchParams(location.search);
+ const returnParams=new URLSearchParams();
+ for(const key of ['status','service','sector']){
+  const value=currentParams.get(key);
+  if(value) returnParams.set(key,value);
+ }
+ projectBackLink.search=returnParams.toString();
+}
 if(projectList){
  const cards=[...projectList.querySelectorAll('.project-card')];
+ const filterToggle=document.querySelector('.project-filter-toggle');
+ const filterCount=document.getElementById('project-filter-count');
+ filterToggle.hidden=false;
+ filterToggle.addEventListener('click',()=>{
+  const open=filterToggle.getAttribute('aria-expanded')==='true';
+  filterToggle.setAttribute('aria-expanded',String(!open));
+ });
  const service=document.getElementById('service-filter'),sector=document.getElementById('sector-filter'),tabs=[...document.querySelectorAll('[data-status-filter]')];
  const choices={services:[...service.options].map(o=>o.value),sectors:[...sector.options].map(o=>o.value)};
  let filters=readFilters(location.search,choices);
  function draw(push=false){
   service.value=filters.service;sector.value=filters.sector;tabs.forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.statusFilter===filters.status)));
-  let count=0;for(const card of cards){const match=matchesProject({status:card.dataset.status,services:card.dataset.services.split(' '),sector:card.dataset.sector},filters);card.hidden=!match;if(match)count++;}
+  const query=filterQuery(filters);
+  const activeFilters=Number(filters.service!=='all')+Number(filters.sector!=='all');
+  filterCount.hidden=activeFilters===0;
+  filterCount.textContent=activeFilters?'('+activeFilters+')':'';
+  let count=0;
+  for(const card of cards){
+   const match=matchesProject({status:card.dataset.status,services:card.dataset.services.split(' '),sector:card.dataset.sector},filters);
+   card.hidden=!match;
+   card.querySelector('.project-card-link').search=query;
+   if(match) count++;
+  }
   document.getElementById('project-count').textContent=`${count} ${count===1?'project':'projects'}`;
   document.getElementById('project-empty').hidden=count!==0;document.getElementById('experience-notice').hidden=filters.status!=='experience';
   document.getElementById('reset-filters').hidden=Object.values(filters).every(v=>v==='all');
-  if(push){const query=filterQuery(filters);history.pushState({},'',location.pathname+(query?'?'+query:'')+location.hash);}
+  if(push) history.pushState({},'',location.pathname+(query?'?'+query:'')+location.hash);
   updateNavigationCurrent();
  }
  tabs.forEach(b=>b.addEventListener('click',()=>{filters.status=b.dataset.statusFilter;draw(true);}));
