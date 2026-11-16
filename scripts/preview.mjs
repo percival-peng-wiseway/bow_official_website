@@ -4,6 +4,7 @@ import {resolve,extname,sep} from 'node:path';
 import {Readable} from 'node:stream';
 import {handleContact} from '../backend/contact-worker.mjs';
 const port=Number(process.env.PORT||process.argv[process.argv.indexOf('--port')+1])||4174;
+const lightPreview=process.argv.includes('--light');
 const root=resolve('dist'),outbox=resolve('.local/enquiries');
 const origins=[`http://127.0.0.1:${port}`,`http://localhost:${port}`];
 const mime={'.html':'text/html;charset=utf-8','.js':'text/javascript;charset=utf-8','.css':'text/css;charset=utf-8','.json':'application/json','.webp':'image/webp','.png':'image/png','.jpg':'image/jpeg','.pdf':'application/pdf','.mp4':'video/mp4','.xml':'application/xml','.txt':'text/plain'};
@@ -22,7 +23,7 @@ const server=http.createServer(async(req,res)=>{
   }
   if(!['GET','HEAD'].includes(req.method)){res.writeHead(405);res.end();return;}
   let path=resolve(root,'.'+pathname);if(path!==root&&!path.startsWith(root+sep)){res.writeHead(403);res.end();return;}
-  try{if((await stat(path)).isDirectory())path=resolve(path,'index.html');const body=await readFile(path);res.writeHead(200,{'Content-Type':mime[extname(path)]||'application/octet-stream','Cache-Control':'no-store','X-Content-Type-Options':'nosniff'});res.end(req.method==='HEAD'?undefined:body);}catch(error){res.writeHead(404,{'Content-Type':'text/html;charset=utf-8'});res.end(req.method==='HEAD'?undefined:await readFile(resolve(root,'404.html')));}
+  try{if((await stat(path)).isDirectory())path=resolve(path,'index.html');let body=await readFile(path);if(lightPreview&&extname(path)==='.html')body=body.toString().replace('</head>','<link rel="stylesheet" href="/theme-light.css"><meta name="robots" content="noindex"></head>').replace('name="theme-color" content="#202020"','name="theme-color" content="#ffffff"');res.writeHead(200,{'Content-Type':mime[extname(path)]||'application/octet-stream','Cache-Control':'no-store','X-Content-Type-Options':'nosniff'});res.end(req.method==='HEAD'?undefined:body);}catch(error){res.writeHead(404,{'Content-Type':'text/html;charset=utf-8'});res.end(req.method==='HEAD'?undefined:await readFile(resolve(root,'404.html')));}
  }catch{res.writeHead(400,{'Content-Type':'application/json'});res.end(JSON.stringify({ok:false,error:'Invalid request.'}));}
 });
 server.listen(port,'127.0.0.1',()=>console.log(`BOW review preview: ${origins[0]}/\nContact form: local test outbox only; no email sent.`));

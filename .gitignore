@@ -10,3 +10,11 @@ output/
 .local/
 .dev.vars
 __pycache__/
+
+# Local handoff records and review-only files (not for the public repository)
+docs/implementation-review-*.html
+docs/pdf-comparison-*.html
+docs/requirements-status.csv
+docs/image-source-register.csv
+docs/baseline-verification.json
+dist/theme-light.css

@@ -52,6 +52,7 @@ for name,routes in sorted(used.items()):
  else:
   kind='Existing supplied asset'
   if name in ['logo-lockup.png','brand-mark.png'] or name in [p+'.webp' for p in ['andrew-robb','jason-ohara','joe-brinzi','steve-wang','hassan-kassem','nidhi-pandey','bryce-kemp','mahitha-cherukuvada','mt-miller','gladstone']]:source='BOW Projects company profile / retained supplied site asset'
+  elif name=='aami-park-aerial.webp':kind='New supplied photograph';source='AAMI Park 1.jpg, supplied 16 November 2026 (original kept in ignored output/source-images/)'
   else:source='BOW Structures company profile / retained supplied site asset'
   rights='Original photographer and usage permission to be confirmed by BOW; local review only'
  records.append({'website_asset':name,'source_type':kind,'supplied_source':source,'used_on':' | '.join(sorted(routes)),'rights_status':rights})
