@@ -53,6 +53,10 @@ for name,routes in sorted(used.items()):
   kind='Existing supplied asset'
   if name in ['logo-lockup.png','brand-mark.png'] or name in [p+'.webp' for p in ['andrew-robb','jason-ohara','joe-brinzi','steve-wang','hassan-kassem','nidhi-pandey','bryce-kemp','mahitha-cherukuvada','mt-miller','gladstone']]:source='BOW Projects company profile / retained supplied site asset'
   elif name=='aami-park-aerial.webp':kind='New supplied photograph';source='AAMI Park 1.jpg, supplied 16 November 2026 (original kept in ignored output/source-images/)'
+  elif name.startswith('news-'):
+   posts={'news-mcah-start-up-meeting':'DbUthL2zw4v','news-box-hill-occupancy-permit':'DazEwS4E4Ur','news-mcah-eci-appointment':'DZrdmskoLTG','news-site-team-safety':'DZrL7KykzNd'}
+   post=next((code for prefix,code in posts.items() if name.startswith(prefix)),'')
+   kind='BOW Instagram post';source=f'https://www.instagram.com/p/{post}/ (@bowprojectsaustralia, downloaded 17 November 2026)'
   else:source='BOW Structures company profile / retained supplied site asset'
   rights='Original photographer and usage permission to be confirmed by BOW; local review only'
  records.append({'website_asset':name,'source_type':kind,'supplied_source':source,'used_on':' | '.join(sorted(routes)),'rights_status':rights})

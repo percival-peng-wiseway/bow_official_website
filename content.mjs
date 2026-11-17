@@ -1137,3 +1137,82 @@ export const homePeople = [
   "joe-brinzi",
   "steve-wang"
 ];
+
+// News posts adapted from the first four posts on BOW's Instagram (@bowprojectsaustralia),
+// newest first. Body copy keeps the original captions with hashtags removed.
+export const news = [
+  {
+    "id": "mcah-start-up-meeting",
+    "title": "Start-up meeting for the Museum of Chinese Australian History",
+    "navLabel": "MCAH start-up meeting",
+    "date": "2026-07-28",
+    "category": "Project update",
+    "project": "mcah",
+    "standfirst": "Today we officially kicked off our start-up meeting with our consultant team for the MCAH Project.",
+    "body": [
+      "It was fantastic to bring everyone together to align on the project’s vision, objectives, and delivery strategy. Strong collaboration from day one lays the foundation for a successful outcome, and we’re looking forward to working closely with all parties as we move into the next phase.",
+      "A special thank you to Mark Wang, CEO of MCAH, and to our consultant and project partners:"
+    ],
+    "list": ["MCAH", "IGS", "KPA", "Pivot Structures", "City Circle Group", "Traffix Group", "Greenlight Environmental Services", "D-Tech", "GeoAust Geotechnical Engineers"],
+    "cover": {"image": "news-mcah-start-up-meeting", "width": 1440, "height": 850, "alt": "The MCAH project team and consultants at the start-up meeting, in front of a ceremonial Chinese dragon"},
+    "gallery": [],
+    "instagram": "https://www.instagram.com/p/DbUthL2zw4v/"
+  },
+  {
+    "id": "box-hill-occupancy-permit",
+    "title": "Occupancy permit achieved at Box Hill Child Care Centre",
+    "navLabel": "Box Hill occupancy permit",
+    "date": "2026-07-15",
+    "category": "Milestone",
+    "project": "box-hill-childcare",
+    "standfirst": "We are proud to announce that we have successfully achieved Occupancy Permit for our latest childcare centre project.",
+    "body": [
+      "A huge congratulations and thank you to Daniel Brinzi and his team for their outstanding commitment, professionalism, and hard work in delivering a high quality facility that will provide a safe, welcoming, and inspiring environment for young children for many years to come.",
+      "It has also been a pleasure working alongside our valued client, Sam Wang, throughout this project. We sincerely appreciate the trust and collaboration that made this achievement possible.",
+      "Congratulations to everyone involved. We look forward to seeing the positive impact this new childcare centre will have on the local community."
+    ],
+    "list": [],
+    "cover": {"image": "news-box-hill-occupancy-permit", "width": 1152, "height": 864, "position": "100% 50%", "alt": "Two people shaking hands and holding the occupancy permit outside the completed Box Hill Child Care Centre"},
+    "gallery": [],
+    "instagram": "https://www.instagram.com/p/DazEwS4E4Ur/"
+  },
+  {
+    "id": "mcah-eci-appointment",
+    "title": "BOW appointed ECI contractor for the Museum of Chinese Australian History",
+    "navLabel": "MCAH ECI appointment",
+    "date": "2026-06-17",
+    "category": "Announcement",
+    "project": "mcah",
+    "standfirst": "We are proud to share that BOW Projects Australia has been appointed as the ECI Contractor for the Museum of Chinese Australian History.",
+    "body": [
+      "This appointment represents a fantastic opportunity to contribute to a culturally significant project that celebrates and preserves the rich history and contributions of Chinese Australians.",
+      "We’re looking forward to working collaboratively with all stakeholders during the Early Contractor Involvement phase to ensure the project is thoughtfully planned and successfully delivered. A big thank you to everyone involved – we’re excited to get started."
+    ],
+    "list": [],
+    "cover": {"image": "news-mcah-eci-appointment", "width": 1440, "height": 810, "position": "72% 50%", "alt": "Render of the Museum of Chinese Australian History, a faceted gold glass building among Melbourne CBD towers"},
+    "gallery": [],
+    "instagram": "https://www.instagram.com/p/DZrdmskoLTG/"
+  },
+  {
+    "id": "site-team-safety",
+    "title": "Zero lost time injuries: thank you to our site team",
+    "navLabel": "Zero lost time injuries",
+    "date": "2026-06-17",
+    "category": "Safety",
+    "project": "",
+    "standfirst": "Progress is never the work of one person – it’s the result of a team working together towards a common goal.",
+    "body": [
+      "From the drawing board to site delivery, collaboration, communication, and commitment are what turn plans into reality.",
+      "With zero lost time injuries and safety being paramount, we are delivering on our commitment to think safe, work safe and get home safe.",
+      "A big thank you to our site team for your dedication and hard work."
+    ],
+    "list": [],
+    "cover": {"image": "news-site-team-safety", "width": 1440, "height": 1080, "alt": "Two BOW site team members in hard hats and high-visibility clothing inside a building under fit-out"},
+    "gallery": [
+      {"image": "news-site-team-safety-1", "width": 1000, "height": 1333, "alt": "Two BOW team members in hard hats and high-visibility vests under new steel framing"},
+      {"image": "news-site-team-safety-2", "width": 1000, "height": 1333, "alt": "Two BOW team members reviewing drawings on a site table"},
+      {"image": "news-site-team-safety-3", "width": 1000, "height": 1333, "alt": "Two BOW site team members standing in a building under fit-out"}
+    ],
+    "instagram": "https://www.instagram.com/p/DZrL7KykzNd/"
+  }
+];
