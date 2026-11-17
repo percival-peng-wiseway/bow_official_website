@@ -90,7 +90,7 @@ function home(){
      <dd>Senior team experience across construction and infrastructure</dd>
     </div>
     <div>
-     <dt>$15Bn+</dt>
+     <dt>15 Bn+</dt>
      <dd>Construction and infrastructure overseen at construction or project management level</dd>
     </div>
     <div>
