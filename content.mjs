@@ -32,6 +32,11 @@ export const company = {
       "text": "Our in-house structures division. Design, groundworks, basements, concrete, post-tensioning and precast, self-performed."
     }
   ],
+  "homeIntro": [
+    "BOW Projects Australia is a construction group based in Melbourne and working across Victoria, Queensland, New South Wales, South Australia, Western Australia and Tasmania. We take on commercial, residential, industrial and public buildings, and a growing book of energy infrastructure.",
+    "With over 80 years of experience in the Construction and Development sector, BOW Projects personnel have proven credentials in developing and building successful complex and mixed-use environments in partnership with government, corporate and blue-chip clients.",
+    "Our people have built stadiums, hospitals, airports, high-rise towers and the basements underneath them. We bring that experience to every job, whether it is a childcare centre in the suburbs or a museum inside a heritage shell in Chinatown."
+  ],
   "about": [
     "BOW Projects Australia is a construction group based in Melbourne and working across Victoria, Queensland, New South Wales, South Australia, Western Australia and Tasmania. We take on commercial, residential, industrial and public buildings, and a growing book of energy infrastructure.",
     "What sets us apart is where we start. We prefer to be in the room before the drawings are finished, when the structure can still be made simpler, the staging safer and the budget honest. That is why much of our current work is early contractor involvement and construction management, alongside the projects we deliver as head contractor.",

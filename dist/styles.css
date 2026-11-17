@@ -494,6 +494,31 @@ main .licences p{font-size:var(--module-copy);line-height:1.7;}
 .hero-background img{object-fit:cover;object-position:center;transform:none;}
 .home-hero .hero-copy{position:absolute;inset:0;height:auto;}
 .home-intro{padding-block:clamp(44px,5vw,80px);background:linear-gradient(#202020,#242423);}
+/* Homepage introduction: full-width lead statement, supporting copy split across two even columns. */
+.home-overview{
+ display:grid;
+ grid-template-columns:repeat(2,minmax(0,1fr));
+ gap:clamp(20px,2.4vw,32px) 32px;
+ margin-block-end:clamp(48px,6vw,88px);
+}
+.home-overview p{
+ margin:0;
+ color:var(--body-copy);
+ font-size:clamp(1rem,1.2vw,1.0625rem);
+ line-height:1.7;
+ text-wrap:pretty;
+}
+.home-overview .home-overview-lead{
+ grid-column:1 / -1;
+ color:#deddd6;
+ font-size:clamp(1.375rem,2.2vw,2rem);
+ line-height:1.45;
+ letter-spacing:-.02em;
+}
+@media(max-width:900px){
+ .home-overview{grid-template-columns:minmax(0,1fr);}
+ .home-overview p{max-inline-size:68ch;}
+}
 .home-stats,.home-explore{
  display:grid;
  grid-template-columns:repeat(3,minmax(0,1fr));

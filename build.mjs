@@ -82,15 +82,16 @@ function ourReach(){
 function home(){
  const firstScene=heroScenes[0];
  return `${header()}<main id="main"><section class="home-hero" aria-label="BOW across Australia"><div class="hero-frame"><div class="hero-background"><img id="hero-poster" src="${heroPosterUrl(firstScene.poster)}" alt="${esc(firstScene.alt||firstScene.label)}" width="1320" height="711" fetchpriority="high" decoding="async"><video id="hero-video" muted loop playsinline preload="none" hidden aria-hidden="true"></video></div><div class="hero-shade"></div><div class="hero-copy"><h1>${esc(company.tagline)}</h1></div><div class="hero-controls"><div class="state-switcher" role="group" aria-label="Choose a state">${heroScenes.map((s,i)=>`<button data-scene="${s.id}" aria-label="${s.label}" aria-pressed="${i===0}">${s.id}</button>`).join('')}</div><p id="hero-location" aria-live="polite">Melbourne, Victoria</p><button id="hero-playback" class="playback" hidden aria-label="Pause slideshow">Pause slideshow</button></div></div></section>
- <section id="home-intro" class="home-intro" aria-label="BOW Projects in numbers">
+ <section id="home-intro" class="home-intro" aria-label="About BOW Projects">
   <div class="container">
-   <dl class="home-stats">
+   <div class="home-overview">${company.homeIntro.map((text,i)=>`<p${i===0?' class="home-overview-lead"':''}>${esc(text)}</p>`).join('')}</div>
+   <dl class="home-stats" aria-label="BOW Projects in numbers">
     <div>
      <dt>80+ years</dt>
      <dd>Senior team experience across construction and infrastructure</dd>
     </div>
     <div>
-     <dt>15 Bn+</dt>
+     <dt>$15 Bn+</dt>
      <dd>Construction and infrastructure overseen at construction or project management level</dd>
     </div>
     <div>
