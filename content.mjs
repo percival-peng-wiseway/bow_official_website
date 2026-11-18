@@ -220,7 +220,7 @@ export const projects = [
   {
     "status": "Current project",
     "statusGroup": "current",
-    "image": null,
+    "image": "mcah-render",
     "gallery": [],
     "id": "mcah",
     "name": "MCAH Redevelopment",
