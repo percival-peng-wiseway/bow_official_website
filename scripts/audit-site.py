@@ -51,8 +51,9 @@ for name,routes in sorted(used.items()):
   ident=name.split('.')[0].split('-')[1];record=by_id[ident];source=record['source'];kind='Review Pack '+ident;rights=record['rights']
  else:
   kind='Existing supplied asset'
-  if name in ['logo-lockup.png','brand-mark.png'] or name in [p+'.webp' for p in ['andrew-robb','jason-ohara','joe-brinzi','steve-wang','hassan-kassem','nidhi-pandey','bryce-kemp','mahitha-cherukuvada','mt-miller','gladstone']]:source='BOW Projects company profile / retained supplied site asset'
+  if name in ['logo-lockup.png','brand-mark.png'] or name in [p+'.webp' for p in ['andrew-robb','jason-ohara','joe-brinzi','steve-wang','hassan-kassem','nidhi-pandey','mt-miller','gladstone']]:source='BOW Projects company profile / retained supplied site asset'
   elif name=='aami-park-aerial.webp':kind='New supplied photograph';source='AAMI Park 1.jpg, supplied 16 November 2026 (original kept in ignored output/source-images/)'
+  elif name=='mcg-aerial.webp':kind='New supplied photograph';source='MCG aerial photograph, supplied 18 November 2026 (original kept in ignored output/source-images/)'
   elif name.startswith('news-'):
    posts={'news-mcah-start-up-meeting':'DbUthL2zw4v','news-box-hill-occupancy-permit':'DazEwS4E4Ur','news-mcah-eci-appointment':'DZrdmskoLTG','news-site-team-safety':'DZrL7KykzNd'}
    post=next((code for prefix,code in posts.items() if name.startswith(prefix)),'')

@@ -19,7 +19,7 @@ Open http://127.0.0.1:4174/. For the original preview address, run `python3 meet
 ## Source and content
 
 - `content.mjs`: company, five services, 17 projects, people, per-state hero media configuration and four news posts adapted from BOW's Instagram (images in `dist/assets/news-*.webp`).
-- `build.mjs`: generates 34 content pages (including the News index and four articles), a legacy concept redirect, 404, sitemap and robots file.
+- `build.mjs`: generates 32 content pages (including the News index and four articles), a legacy concept redirect, 404, sitemap and robots file.
 - `dist/styles.css`, `dist/app.js`, `dist/site-model.js`: authored UI and interactions, preserved by the generator.
 - `scripts/prepare-review-images.py`: optional image preparation using Pillow; uses the sibling Review Pack without editing its originals. Selected images are already packaged in `dist/assets/`.
 - `scripts/audit-site.py`: checks generated links/anchors and creates the image source register.

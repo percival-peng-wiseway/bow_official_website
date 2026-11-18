@@ -21,8 +21,8 @@ test('Status, service and sector filters compose without leaking unmatched proje
  assert.equal(model.filter(p=>matchesProject(p,{status:'current',service:'energy',sector:'Energy'})).length,2);
  assert.equal(model.filter(p=>matchesProject(p,{status:'completed',service:'energy',sector:'Energy'})).length,0);
 });
-test('Partners and missing state media are not represented as employees or unrelated footage',()=>{
- assert.equal(people.find(p=>p.id==='bryce-kemp').group,'partners');
+test('External partners are not listed as BOW people and missing state media is not replaced with unrelated footage',()=>{
+ assert.equal(people.some(p=>p.group==='partners'||p.id==='bryce-kemp'),false);
  assert.equal(people.find(p=>p.id==='hassan-kassem').role,'Director - Structure');assert.equal(people.find(p=>p.id==='nidhi-pandey').role,'Estimating Director');
  for(const s of heroScenes.filter(s=>['NSW','SA','WA','TAS'].includes(s.id))){assert.equal(s.poster,null);assert.equal(s.video,'');}
 });

@@ -42,24 +42,6 @@ export const company = {
     "What sets us apart is where we start. We prefer to be in the room before the drawings are finished, when the structure can still be made simpler, the staging safer and the budget honest. That is why much of our current work is early contractor involvement and construction management, alongside the projects we deliver as head contractor.",
     "Our people have built stadiums, hospitals, airports, high-rise towers and the basements underneath them. We bring that experience to every job, whether it is a childcare centre in the suburbs or a museum inside a heritage shell in Chinatown."
   ],
-  "values": [
-    [
-      "Integrity",
-      "We do what we said we would do, including when nobody is watching."
-    ],
-    [
-      "Innovation",
-      "Most problems on a building site have a better answer than the first one. We go looking for it."
-    ],
-    [
-      "Synergy",
-      "The best projects are the ones where the client, the consultants and the builder are pulling the same way. We work to make that happen early."
-    ],
-    [
-      "Perseverance",
-      "Resistance is opportunity in disguise. Our first question is always “how do we make this work?”"
-    ]
-  ],
   "licences": [
     {
       "state": "Victoria",
@@ -165,7 +147,7 @@ export const services = [
     "caption": "Civic · Health · Transport · Sport",
     "intro": "Built for the people who depend on it.",
     "summary": "Stadiums, hospitals, transport and civic buildings, with the structural depth they demand.",
-    "description": "Public buildings are judged for a long time after the ribbon is cut, so we build them to be judged.\n\nOur people have delivered and engineered work at the MCG, AAMI Park, Rod Laver Arena, Melbourne Airport, the New Footscray Hospital and the Metro Tunnel.\n\nBOW brings that structural depth, together with early contractor involvement and construction management, to civic, health, education, transport and sporting projects.",
+    "description": "Public buildings are judged for a long time after the ribbon is cut, so we build them to be judged.\n\nOur people have delivered and engineered work at the MCG, AAMI Park, Rod Laver Arena and the Metro Tunnel.\n\nBOW brings that structural depth, together with early contractor involvement and construction management, to civic, health, education, transport and sporting projects.",
     "scope": [
       "Civic and community buildings",
       "Health and education facilities",
@@ -174,8 +156,6 @@ export const services = [
       "Construction management and construction-stage engineering"
     ],
     "related": [
-      "footscray",
-      "airport",
       "aami-park",
       "mcg"
     ],
@@ -840,95 +820,6 @@ export const projects = [
     "attribution": "Experience of the BOW Structures and BOW Projects team prior to BOW. These projects are not BOW contracts."
   },
   {
-    "id": "footscray",
-    "name": "New Footscray Hospital",
-    "location": "Footscray, Victoria",
-    "state": "VIC",
-    "status": "Team experience, prior to BOW",
-    "statusGroup": "experience",
-    "services": [
-      "structures",
-      "infrastructure"
-    ],
-    "image": "footscray",
-    "imageCaption": "Project rendering supplied in the BOW Structures profile.",
-    "headline": "Engineering for essential infrastructure.",
-    "summary": "Construction-stage engineering, temporary works and design support for major health infrastructure.",
-    "description": "New Footscray Hospital is included in the BOW Structures team’s project experience. The profile describes inspection services, value management and redesign solutions during construction.",
-    "detail": "The stated engineering scope also includes temporary works design and documentation, design and construct engineering and ongoing consulting services.",
-    "facts": [
-      [
-        "Sector",
-        "Healthcare"
-      ],
-      [
-        "Location",
-        "Footscray, VIC"
-      ],
-      [
-        "Focus",
-        "Construction engineering"
-      ],
-      [
-        "Portfolio",
-        "Team experience"
-      ]
-    ],
-    "scope": [
-      "Construction-phase engineering",
-      "Temporary works",
-      "Design and construct engineering"
-    ],
-    "sector": "Health",
-    "role": "Prior team experience",
-    "gallery": [],
-    "attribution": "Experience of the BOW Structures and BOW Projects team prior to BOW. These projects are not BOW contracts."
-  },
-  {
-    "id": "airport",
-    "name": "Melbourne Airport",
-    "location": "Melbourne, Victoria",
-    "state": "VIC",
-    "status": "Team experience, prior to BOW",
-    "statusGroup": "experience",
-    "services": [
-      "structures",
-      "infrastructure"
-    ],
-    "image": "airport",
-    "imageCaption": "Project photography supplied in the BOW Structures profile.",
-    "headline": "Practical engineering in a complex environment.",
-    "summary": "Temporary works and engineering for masonry removal and structural support.",
-    "description": "The BOW Structures profile highlights Melbourne Airport as team experience in masonry wall removal and structural temporary works.",
-    "detail": "The scope includes inspections, demolition and construction methodology reviews, hardstand platforms, precast propping, temporary support for non-loadbearing façade precast walls and related design consulting.",
-    "facts": [
-      [
-        "Sector",
-        "Transport"
-      ],
-      [
-        "Location",
-        "Melbourne, VIC"
-      ],
-      [
-        "Focus",
-        "Temporary works"
-      ],
-      [
-        "Portfolio",
-        "Team experience"
-      ]
-    ],
-    "scope": [
-      "Masonry wall removal",
-      "Structural temporary works"
-    ],
-    "sector": "Transport",
-    "role": "Prior team experience",
-    "gallery": [],
-    "attribution": "Experience of the BOW Structures and BOW Projects team prior to BOW. These projects are not BOW contracts."
-  },
-  {
     "id": "aami-park",
     "name": "AAMI Park",
     "location": "Melbourne, Victoria",
@@ -975,8 +866,7 @@ export const projects = [
     "services": [
       "infrastructure"
     ],
-    "image": "mcg",
-    "imageCaption": "Venue photography supplied in the BOW Structures profile.",
+    "image": "mcg-aerial",
     "headline": "A portfolio shaped by iconic infrastructure.",
     "summary": "The MCG is featured in the supplied team experience portfolio.",
     "description": "The Melbourne Cricket Ground appears in the BOW company and Structures profiles as an example of the team’s major sporting infrastructure experience.",
@@ -1053,22 +943,6 @@ export const people = [
     "group": "leadership",
     "image": "nidhi-pandey",
     "bio": "With a background in architecture and construction management, Nidhi provides quantity surveying and estimating across the group's tenders and early contractor involvement work."
-  },
-  {
-    "id": "bryce-kemp",
-    "name": "Bryce Kemp",
-    "role": "Principal, KPA Consulting",
-    "group": "partners",
-    "image": "bryce-kemp",
-    "bio": "Founder and Director of KPA Consulting, Bryce brings 17 years of experience across more than 900 projects, including the Melbourne Metro Tunnel and the West Gate Tunnel."
-  },
-  {
-    "id": "mahitha-cherukuvada",
-    "name": "Mahitha Cherukuvada",
-    "role": "Post-Tensioning Specialist",
-    "group": "specialists",
-    "image": "mahitha-cherukuvada",
-    "bio": "Mahitha brings more than 17 years of experience in post-tensioning and structural remediation, with full-lifecycle project management, team leadership and value engineering."
   }
 ];
 
