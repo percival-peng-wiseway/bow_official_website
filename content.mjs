@@ -452,8 +452,7 @@ export const projects = [
     "services": [
       "energy"
     ],
-    "image": "mt-miller",
-    "imageCaption": "Site plan from the 2026 BOW company profile.",
+    "image": "mt-miller-aerial",
     "headline": "Battery storage at a transformative scale.",
     "summary": "A proposed 400 MW / 1.6 GWh battery energy storage development in central Queensland.",
     "description": "The Mt Miller 400 MW / 1.6 GWh battery energy storage project is set to become one of Queensland’s largest clean energy projects. The Mt Miller Battery Energy Storage System (BESS) is expected to be the state’s largest standalone storage project, providing critical support to the Queensland grid through high-capacity peak shaving and frequency regulation. It will significantly enhance grid stability and help balance regional energy supply and demand.",

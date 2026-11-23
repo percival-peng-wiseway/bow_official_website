@@ -53,6 +53,7 @@ for name,routes in sorted(used.items()):
   kind='Existing supplied asset'
   if name in ['logo-lockup.png','brand-mark.png'] or name in [p+'.webp' for p in ['andrew-robb','jason-ohara','joe-brinzi','steve-wang','hassan-kassem','nidhi-pandey','mt-miller','gladstone']]:source='BOW Projects company profile / retained supplied site asset'
   elif name=='aami-park-aerial.webp':kind='New supplied photograph';source='AAMI Park 1.jpg, supplied 16 November 2026 (original kept in ignored output/source-images/)'
+  elif name=='mt-miller-aerial.webp':kind='New supplied photograph';source='Mt Miller BESS aerial photograph, supplied 23 November 2026 (original kept in ignored output/source-images/)'
   elif name=='mcah-render.webp':kind='New supplied rendering';source='MCAH rendering, supplied 18 November 2026 (original kept in ignored output/source-images/)'
   elif name=='mcg-aerial.webp':kind='New supplied photograph';source='MCG aerial photograph, supplied 18 November 2026 (original kept in ignored output/source-images/)'
   elif name.startswith('news-'):
