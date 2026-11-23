@@ -210,29 +210,34 @@ if(projectList){
  window.addEventListener('popstate',()=>{filters=readFilters(location.search,choices);draw();});draw();
 }
 
-const emailEnquiry=document.querySelector('[data-enquiry-email]');
-if(emailEnquiry){
- const project=new URLSearchParams(location.search).get('project')?.trim().slice(0,200);
- if(project){
-  const subject=new URLSearchParams({subject:`Project enquiry: ${project.replace(/[\r\n]+/g,' ')}`});
-  emailEnquiry.href+='?'+subject.toString().replace(/\+/g,'%20');
- }
-}
 const form=document.getElementById('enquiry-form');
 if(form){
  const params=new URLSearchParams(location.search),service=form.elements.service;
  if([...service.options].some(o=>o.value===params.get('service')))service.value=params.get('service');
  if(params.get('project'))form.elements.message.value=`Project: ${params.get('project').slice(0,200)}\n\n`;
- const local=['127.0.0.1','localhost','[::1]'].includes(location.hostname);
- const endpoint=config.contactEndpoint||(local?config.basePath+'/api/contact/':'');
+ const endpoint=config.contactEndpoint,to=form.dataset.email;
  const button=form.querySelector('button[type=submit]'),result=document.getElementById('enquiry-result'),mode=document.getElementById('form-mode');
  let requestId=crypto.randomUUID(),startedAt=Date.now();
- if(local&&!config.contactEndpoint){mode.textContent='Local review: submissions are saved on this computer only. No email is sent.';button.firstChild.textContent='Save test enquiry ';}
- if(!endpoint){mode.textContent='The online enquiry form is not available yet. Please email info@bowprojects.com.au.';button.disabled=true;}
+ function emailDraft(values){
+  const project=params.get('project')?.trim().replace(/[\r\n]+/g,' ').slice(0,200);
+  const help=service.selectedOptions[0]?.text||'General enquiry';
+  const name=`${values.firstName} ${values.lastName}`.trim();
+  const details=[`Name: ${name}`,`Email: ${values.email}`,values.phone&&`Mobile: ${values.phone}`,values.company&&`Company: ${values.company}`,`Enquiry: ${help}`].filter(Boolean);
+  const body=[...details,'',values.message.trim()].join('\r\n');
+  const subject=project?`Project enquiry: ${project}`:`Website enquiry: ${help}${values.company?' – '+values.company:''}`;
+  return `mailto:${to}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+ }
  function show(message,error=false){result.hidden=false;result.classList.toggle('error',error);result.textContent=message;result.focus({preventScroll:true});result.scrollIntoView({block:'nearest',behavior:reduced.matches?'instant':'smooth'});}
  form.addEventListener('input',()=>{requestId=crypto.randomUUID();});
  form.addEventListener('submit',async event=>{
-  event.preventDefault();if(!form.reportValidity()||!endpoint)return;
+  event.preventDefault();if(!form.reportValidity())return;
+  if(!endpoint){
+   const values=Object.fromEntries(new FormData(form));
+   if(values.website)return;
+   location.href=emailDraft(values);
+   show(`Your email app should now open with your enquiry ready to send. If it didn't, please email ${to} directly.`);
+   return;
+  }
   button.disabled=true;button.setAttribute('aria-busy','true');result.hidden=true;
   const values=Object.fromEntries(new FormData(form));
   try{
@@ -242,6 +247,6 @@ if(form){
    show(data.mode==='local'?'Saved to the local review outbox. This was a test submission; no email was sent.':'Thank you. Your enquiry has been submitted to BOW.');
    form.reset();requestId=crypto.randomUUID();startedAt=Date.now();
   }catch(error){show(error.name==='TimeoutError'?'The request timed out. Your details are still here; please retry or email info@bowprojects.com.au.':error.message,true);}
-  finally{button.disabled=!endpoint;button.removeAttribute('aria-busy');}
+  finally{button.disabled=false;button.removeAttribute('aria-busy');}
  });
 }
