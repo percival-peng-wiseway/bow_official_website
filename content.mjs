@@ -532,7 +532,7 @@ export const projects = [
   {
     "status": "Completed project",
     "statusGroup": "completed",
-    "image": null,
+    "image": "box-hill-aerial",
     "gallery": [],
     "id": "box-hill-childcare",
     "name": "Box Hill Childcare",

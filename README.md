@@ -37,7 +37,7 @@ The detailed review report, requirement status and image source register remain 
 
 The contact sheet references four videos, A01–A04, which are absent from the supplied folder. State controls and video-loading support exist, but all actual video URLs remain empty. Victoria uses Brighton photography; Queensland uses the supplied Mt Miller site plan. Missing-state selections use a neutral background, never a falsely attributed image. To add authorised footage, populate `video` and optionally `mobileVideo` in `heroScenes`; URLs are site-relative paths. Use web-optimised H.264 MP4 with fast-start and a matching still. No old placeholder animation is loaded.
 
-The five new building projects without a matching supplied photograph use intentional text covers. MCAH uses the rendering supplied on 18 November 2026. Do not substitute photos from other projects. F01–F06 KPA images are excluded. Prior team project pages remain clearly labelled and still need BOW's final approval of the list and image rights.
+The four new building projects without a matching supplied photograph use intentional text covers. MCAH uses the rendering supplied on 18 November 2026. Do not substitute photos from other projects. F01–F06 KPA images are excluded. Prior team project pages remain clearly labelled and still need BOW's final approval of the list and image rights.
 
 ## Hosted contact form
 
