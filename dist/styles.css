@@ -901,3 +901,5 @@ main .licences p{font-size:var(--module-copy);line-height:1.7;}
  .news-list{grid-template-columns:minmax(0,1fr);}
  .news-gallery{grid-template-columns:minmax(0,1fr);}
 }
+
+.home-stats .stat-count{display:inline-block;font-variant-numeric:tabular-nums;text-align:right;}

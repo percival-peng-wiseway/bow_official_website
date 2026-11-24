@@ -250,3 +250,29 @@ if(form){
   finally{button.disabled=false;button.removeAttribute('aria-busy');}
  });
 }
+
+const statTerms=[...document.querySelectorAll('.home-stats dt')];
+if(statTerms.length&&!reduced.matches&&'IntersectionObserver' in window){
+ const counters=statTerms.map(term=>{
+  const text=term.textContent.trim(),match=text.match(/^(\D*)(\d+)(.*)$/);
+  if(!match)return null;
+  const [,before,digits,after]=match,target=Number(digits);
+  term.innerHTML='';
+  const label=document.createElement('span');label.className='sr-only';label.textContent=text;
+  const shown=document.createElement('span');shown.setAttribute('aria-hidden','true');
+  const value=document.createElement('span');value.className='stat-count';value.style.minWidth=digits.length+'ch';value.textContent='0';
+  shown.append(before,value,after);term.append(label,shown);
+  return {term,value,target};
+ }).filter(Boolean);
+ const run=({value,target})=>{
+  const duration=1600,start=performance.now();
+  const step=now=>{const t=Math.min((now-start)/duration,1),eased=1-Math.pow(1-t,3);value.textContent=String(Math.round(target*eased));if(t<1)requestAnimationFrame(step);};
+  requestAnimationFrame(step);
+ };
+ const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{
+  if(!entry.isIntersecting)return;
+  observer.unobserve(entry.target);
+  const counter=counters.find(c=>c.term===entry.target);if(counter)run(counter);
+ }),{threshold:.6});
+ counters.forEach(c=>observer.observe(c.term));
+}
