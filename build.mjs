@@ -101,7 +101,7 @@ function home(){
 }
 function about(){
  const copy=`<div class="about-copy">${company.about.map(text=>`<p>${esc(text)}</p>`).join('')}${link('/people/','Meet the people behind BOW')}</div>`;
- return `${header('about')}<main id="main">${heading('About BOW')}<div class="about-banner">${image('review-A05','Construction work at Cremorne, Victoria',{eager:true})}</div>
+ return `${header('about')}<main id="main">${heading('About BOW')}<div class="about-banner">${image('review-B07','The International, Brighton, completed by BOW',{eager:true})}</div>
  ${moduleSection('Experienced people. Enduring partnerships.',copy,{className:'about-introduction',id:'about-bow'})}
  ${moduleSection('Our Reach',ourReach(),{id:'our-reach',className:'reach-section'})}
  </main>${footer()}`;

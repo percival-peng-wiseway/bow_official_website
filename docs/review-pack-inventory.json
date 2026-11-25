@@ -4,7 +4,7 @@
     "source": "BOW Website - Image Selection v1 - Review Pack/A_Home hero - Victoria/A05_ESR-Cremorne_ESR-031.jpg",
     "sha256": "7367247b15e8676fcb7e9a294bbd4aeec8574c0836366e46622da3ab3b30f221",
     "rights": "Not documented in pack; BOW to confirm before public release",
-    "used": true,
+    "used": false,
     "outputs": [
       {
         "file": "assets/review-A05-600.webp",
@@ -23,9 +23,7 @@
       1800,
       1013
     ],
-    "used_on": [
-      "/about/"
-    ]
+    "used_on": []
   },
   {
     "id": "A06",
@@ -370,6 +368,7 @@
       711
     ],
     "used_on": [
+      "/about/",
       "/projects/international-brighton/",
       "/services/",
       "/services/construction/"
